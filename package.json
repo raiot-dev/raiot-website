@@ -1,0 +1,65 @@
+{
+  "name": "automata-hive-website",
+  "version": "1.0.0",
+  "description": "This is the landingpage and room reservation website of the automata-hive extracurricular activity",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "start": "remix-serve build",
+    "dev": "concurrently \"npm:dev:*\"",
+    "build": "concurrently \"npm:build:*\"",
+    "script": "concurrently \"npm:script:*\"",
+    "dev:remix": "remix dev",
+    "build:remix": "remix build",
+    "script:lint": "prettier --write --loglevel warn . && eslint --fix"
+  },
+  "pre-commit": [
+    "script:lint"
+  ],
+  "dependencies": {
+    "@remix-run/node": "^1.7.2",
+    "@remix-run/react": "^1.7.2",
+    "@remix-run/serve": "^1.7.2",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.2",
+    "eslint-plugin-react-hooks": "^5.0.0-next-aa9988e5e-20221010",
+    "i18next": "^21.10.0",
+    "i18next-browser-languagedetector": "^6.1.8",
+    "i18next-fs-backend": "^1.1.5",
+    "i18next-http-backend": "^1.4.4",
+    "isbot": "^3.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.6",
+    "remix": "^1.6.5",
+    "remix-i18next": "^4.1.1",
+    "tailwind": "^4.0.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.7.2",
+    "@remix-run/eslint-config": "^1.7.2",
+    "@types/i18next-fs-backend": "^1.1.2",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "concurrently": "^7.4.0",
+    "eslint": "^8.23.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-automata-hive/automata-hive-website.git"
+  },
+  "author": "schmaenjael",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/the-automata-hive/automata-hive-website/issues"
+  },
+  "homepage": "https://github.com/the-automata-hive/automata-hive-website#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}
