@@ -56,22 +56,17 @@ export class Logger {
   private print(prefix: string, message: string) {
     // retrieves current time
     const timestamp = new Date(Date.now()).toLocaleString(undefined);
-    process.stdout.write(
-      `[${prefix}] ${timestamp} - ${chalk.cyan(message)} \n`
-    );
+    process.stdout.write(`[${prefix}] ${timestamp} - ${chalk.cyan(message)} \n`);
   }
 
   /** @internal */
   private printError(prefix: string, message: string) {
     // retrieves current time
     const timestamp = new Date(Date.now()).toLocaleString(undefined);
-    process.stderr.write(
-      `[${prefix}] ${timestamp} - ${chalk.cyan(message)} \n`
-    );
+    process.stderr.write(`[${prefix}] ${timestamp} - ${chalk.cyan(message)} \n`);
   }
 }
 
 export default new Logger({
-  level:
-    process.env.NODE_ENV === 'production' ? LogLevel.Default : LogLevel.Debug,
+  level: process.env.NODE_ENV === 'production' ? LogLevel.Default : LogLevel.Debug,
 });
