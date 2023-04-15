@@ -1,0 +1,10 @@
+/node_modules
+/dist
+/.cache
+/api
+/.git
+package-lock.json
+/build/
+/public/build
+/public/_build
+/app/styles/
