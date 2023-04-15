@@ -1,6 +1,5 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
-  ignoredRouteFiles: ['**/*.css', '**/*.scss'],
   appDirectory: 'src',
   assetsBuildDirectory: 'build/public/assets',
   serverBuildPath: 'build/index.js',
@@ -14,6 +13,7 @@ module.exports = {
   },
   routes: async (defineRoutes) =>
     defineRoutes((route) => {
-      route('/:lang/', 'routes/$lang/Welcome.tsx');
+      route('/:lang/', 'routes/$lang/welcome.tsx');
+      route('/:lang/error', 'routes/$lang/error.tsx');
     }),
 };

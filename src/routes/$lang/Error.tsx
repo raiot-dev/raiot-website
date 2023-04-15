@@ -22,7 +22,7 @@ export const loader: LoaderFunction = ({
   return { statusCode, url: request.url };
 };
 
-const Error = () => {
+const CatchAll = () => {
   const { t } = useTranslation('common');
   const { statusCode, url } = useLoaderData<{
     statusCode: HttpStatusCode;
@@ -32,4 +32,4 @@ const Error = () => {
   return <div>{t(`error:code_${HttpStatusCode[statusCode]}`)}</div>;
 };
 
-export default Error;
+export default CatchAll;
