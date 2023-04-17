@@ -42,6 +42,7 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
         [isbot(headers.get('User-Agent')) ? 'onAllReady' : 'onShellReady']: () => {
           const body: any = new PassThrough({ encoding: 'utf-8' });
           headers.set('Content-Type', 'text/html');
+          headers.set('Content-Language', locale);
 
           resolve(
             new Response(body, {

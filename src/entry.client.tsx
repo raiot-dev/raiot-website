@@ -1,5 +1,5 @@
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-http-backend';
+import Backend, { HttpBackendOptions } from 'i18next-http-backend';
 import i18next from 'i18next';
 import { hydrateRoot } from 'react-dom/client';
 import { RemixBrowser } from '@remix-run/react';
@@ -12,7 +12,7 @@ i18next
   .use(initReactI18next)
   .use(LanguageDetector)
   .use(Backend)
-  .init({
+  .init<HttpBackendOptions>({
     ...i18nConfig,
     ns: getInitialNamespaces(),
     backend: {
