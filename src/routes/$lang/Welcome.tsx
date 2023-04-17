@@ -19,7 +19,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 const Welcome = () => {
   const { t } = useTranslation('common');
 
-  return <div>{t('welcome:hello')}</div>;
+  return <div>{t('hello')}</div>;
 };
 
 export default Welcome;
