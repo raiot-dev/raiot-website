@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useUtilities } from '~/services';
 
 interface BlurrBloyProps {
   children: Array<JSX.Element> | JSX.Element;
@@ -6,10 +7,12 @@ interface BlurrBloyProps {
 
 const BlurryBlob = ({ children }: BlurrBloyProps) => {
   const blobReference = useRef<HTMLDivElement>(null);
+  const { detectMobile } = useUtilities();
 
   useEffect(() => {
     document.body.onpointermove = ({ clientX, clientY }) => {
       if (!blobReference.current) return;
+      if (detectMobile(navigator)) blobReference.current.style.display = 'none';
 
       blobReference.current.animate(
         { left: `${clientX}px`, top: `${clientY}px` },
