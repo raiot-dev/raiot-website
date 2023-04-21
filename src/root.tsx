@@ -8,7 +8,7 @@ import { SettingsContext } from '~/context/settings/';
 import { Locales, Themes } from '~/models/settings';
 import { i18next, getUUID } from '~/services';
 
-import stylesheet from '~/styles/tailwind.css';
+import stylesheet from '../build/styles/tailwind.css';
 
 export const meta: V2_MetaFunction = () => [{ title: 'schmaenjael.dev' }, { charSet: 'utf-8' }];
 
