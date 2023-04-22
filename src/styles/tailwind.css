@@ -1,4 +1,5 @@
-@import './animations/keyframes.css';
+@import './complementary/keyframes.css';
+@import './complementary/patterns.css';
 
 @tailwind base;
 @tailwind components;

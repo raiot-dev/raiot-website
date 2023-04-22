@@ -29,7 +29,7 @@ const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = f
 
   return (
     <>
-      {text} <span className="text-primary blinking">▐</span>
+      {text} <span className="text-primary blinking select-none">▐</span>
     </>
   );
 };
