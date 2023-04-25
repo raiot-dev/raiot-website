@@ -30,10 +30,10 @@ const Hive = () => {
     <div className="relative w-full h-full bg-dark overflow-hidden">
       <Menu
         menuItems={[
-          { link: '/#', name: 'Our hive' },
-          { link: '/goals', name: 'Goals & Future' },
-          { link: '/timeline', name: 'Timeline' },
-          { link: '/research', name: 'Research & Development' },
+          { link: '/#', name: t('page_homepage') },
+          { link: '/goals', name: t('page_goals') },
+          { link: '/timeline', name: t('page_timeline') },
+          { link: '/research', name: t('page_research') },
         ]}
       />
       <BlurryBlob>
