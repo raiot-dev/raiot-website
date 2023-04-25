@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import Hashing from './Hashing';
 
 interface MenuProps {
   menuItems: Array<{ name: string; link: string }>;
@@ -9,21 +10,20 @@ const Menu = ({ menuItems }: MenuProps) => {
 
   return (
     <>
-      <button className="absolute z-20 h-16 w-16 m-4" onClick={() => setOpenMenu(!openMenu)}>
+      <button className="absolute z-[2] h-16 w-16 m-4" onClick={() => setOpenMenu(!openMenu)}>
         <img src="/assets/menu.svg" />
       </button>
       <div
-        className={`relative z-10 flex ${
-          openMenu ? 'opacity-100 ' : 'opacity-0 h-0 w-0 overflow-hidden'
-        } w-full h-full flex-col justify-center transition-all`}>
+        className={`relative z-[1] flex flex-col justify-center transition-all 
+        ${openMenu ? 'opacity-100 w-full h-full' : 'opacity-0 h-0 w-0 overflow-hidden'}`}>
         <div className="absolute dot-pattern" />
         <nav>
           {menuItems.map(({ name, link }) => (
             <a
-              className="menu-item text-white text-9xl font-bebasNeue block no-underline ml-36 opacity-50 hover:opacity-100 transition-opacity duration-300 py-4"
+              className="relative menu-item text-white text-9xl font-bebasNeue block no-underline ml-36 opacity-50 hover:opacity-100 transition-opacity duration-300 py-4"
               key={name}
               href={link}>
-              {name}
+              <Hashing name={name} />
             </a>
           ))}
         </nav>
