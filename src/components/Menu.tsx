@@ -16,13 +16,12 @@ const Menu = ({ menuItems }: MenuProps) => {
       <div
         className={`relative z-[1] flex flex-col justify-center transition-all
         ${openMenu ? 'opacity-100 w-full h-full' : 'opacity-0 h-0 w-0 overflow-hidden'}`}>
-        <div id="menu-background-pattern" className="absolute dot-pattern" />
+        <div className="absolute dot-pattern" />
         <nav>
           {menuItems.map(({ name, link }) => (
             <a
               className="relative text-white text-9xl font-bebasNeue block no-underline ml-36 opacity-50 hover:opacity-100 transition-opacity duration-300 py-4"
               key={name}
-              id="menu-item"
               href={link}>
               <Hashing name={name} />
             </a>
