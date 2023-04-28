@@ -9,7 +9,5 @@ export const loader: LoaderFunction = async ({ request }) => {
   const statusCode = HttpStatusCode.NotFound;
   const locale = supportedLngs.includes(requestLocale) ? requestLocale : await i18next.getLocale(request);
 
-  console.log(request.url);
-
   return redirect(`/${locale}/error?code=${statusCode}`);
 };
