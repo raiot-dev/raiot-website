@@ -4,6 +4,8 @@ module.exports = {
   assetsBuildDirectory: 'build/public/assets',
   serverBuildPath: 'build/index.js',
   publicPath: '/build/',
+  devServerPort: 8002,
+  serverMinify: false,
   future: {
     unstable_tailwind: true, // will eventually become stable
     v2_errorBoundary: true,
@@ -13,7 +15,7 @@ module.exports = {
   },
   routes: async (defineRoutes) =>
     defineRoutes((route) => {
-      route('/:lang/', 'routes/$lang/welcome.tsx');
-      route('/:lang/error', 'routes/$lang/error.tsx');
+      route('/:lang/', 'routes/$lang/Hive.tsx');
+      route('/:lang/error', 'routes/$lang/Error.tsx');
     }),
 };

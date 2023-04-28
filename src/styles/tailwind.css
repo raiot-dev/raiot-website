@@ -1,3 +1,34 @@
+@import './complementary/keyframes.css';
+@import './complementary/patterns.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue'), url('/fonts/BebasNeue/BebasNeue-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: local('Poppins'), url('/fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: local('Poppins'), url('/fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: local('Poppins'), url('/fonts/Poppins/Poppins-Bold.woff2') format('woff2');
+  }
+}
