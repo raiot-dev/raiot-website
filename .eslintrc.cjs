@@ -8,7 +8,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@remix-run/eslint-config',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
