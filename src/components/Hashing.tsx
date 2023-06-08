@@ -6,7 +6,7 @@ interface HashingProps {
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01'.split('');
 
-const Hashing = ({ name }: HashingProps) => {
+export const Hashing = ({ name }: HashingProps) => {
   const hashingSpanReference = useRef(null);
   const [hashName, setHashName] = useState(name);
 
@@ -33,5 +33,3 @@ const Hashing = ({ name }: HashingProps) => {
     </span>
   );
 };
-
-export default Hashing;

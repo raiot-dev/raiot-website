@@ -5,7 +5,7 @@ interface BlurrBloyProps {
   children: Array<JSX.Element> | JSX.Element;
 }
 
-const BlurryBlob = ({ children }: BlurrBloyProps) => {
+export const BlurryBlob = ({ children }: BlurrBloyProps) => {
   const blobReference = useRef<HTMLDivElement>(null);
   const { detectMobile } = useUtilities();
 
@@ -24,13 +24,11 @@ const BlurryBlob = ({ children }: BlurrBloyProps) => {
   return (
     <>
       <div
-        className="absolute w-80 h-80 left-[50%] top-[50%] rounded-full rotating pointer-events-none opacity-30 bg-gradient-to-r from-[#DF3D92] to-[#1F34E7]"
+        className="rotating pointer-events-none absolute left-[50%] top-[50%] h-80 w-80 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30"
         ref={blobReference}
       />
-      <div className="absolute w-full h-full backdrop-blur-3xl pointer-events-none top-0 left-0" />
-      <div className="relative w-full h-full">{children}</div>
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full backdrop-blur-3xl" />
+      <div className="relative h-full w-full">{children}</div>
     </>
   );
 };
-
-export default BlurryBlob;

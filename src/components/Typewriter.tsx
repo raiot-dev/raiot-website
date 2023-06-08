@@ -8,7 +8,7 @@ interface TypeWriterProps {
   repeat?: boolean;
 }
 
-const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = false }: TypeWriterProps) => {
+export const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = false }: TypeWriterProps) => {
   const type = useRef<'write' | 'delete'>('write');
   const [text, setText] = useState<string>('');
   const { sleep } = useUtilities();
@@ -29,9 +29,7 @@ const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = f
 
   return (
     <>
-      {text} <span className="text-primary blinking select-none">▐</span>
+      {text} <span className="blinking select-none text-primary">▐</span>
     </>
   );
 };
-
-export default Typewriter;

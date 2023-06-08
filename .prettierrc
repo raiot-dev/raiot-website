@@ -2,7 +2,6 @@
   "trailingComma": "es5",
   "arrowParens": "always",
   "bracketSameLine": true,
-  "editorconfig": true,
   "htmlWhitespaceSensitivity": "strict",
   "tabWidth": 2,
   "printWidth": 120,

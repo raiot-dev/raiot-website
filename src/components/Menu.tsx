@@ -1,35 +1,35 @@
 import { useState } from 'react';
-import Hashing from './Hashing';
+
+import { Hashing } from './Hashing';
+import { Link } from '@remix-run/react';
 
 interface MenuProps {
   menuItems: Array<{ name: string; link: string }>;
 }
 
-const Menu = ({ menuItems }: MenuProps) => {
+export const Menu = ({ menuItems }: MenuProps) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
-      <button className="absolute z-[2] h-16 w-16 m-4" onClick={() => setOpenMenu(!openMenu)}>
-        <img src="/assets/menu.svg" />
+      <button className="absolute z-[2] m-4 h-16 w-16" onClick={() => setOpenMenu(!openMenu)} name="Menubutton">
+        <img src="/assets/menu.svg" alt="Menubutton to open menu" className="h-full w-full" />
       </button>
       <div
         className={`relative z-[1] flex flex-col justify-center transition-all
-        ${openMenu ? 'opacity-100 w-full h-full' : 'opacity-0 h-0 w-0 overflow-hidden'}`}>
-        <div className="absolute dot-pattern" />
+        ${openMenu ? 'h-full w-full opacity-100' : 'h-0 w-0 overflow-hidden opacity-0'}`}>
+        <div className="dot-pattern absolute" />
         <nav>
           {menuItems.map(({ name, link }) => (
-            <a
-              className="relative text-white text-9xl font-bebasNeue block no-underline ml-36 opacity-50 hover:opacity-100 transition-opacity duration-300 py-4"
+            <Link
+              className="relative ml-36 block py-4 font-bebasNeue text-9xl text-white no-underline opacity-50 transition-opacity duration-300 hover:opacity-100"
               key={name}
-              href={link}>
+              to={link}>
               <Hashing name={name} />
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
     </>
   );
 };
-
-export default Menu;
