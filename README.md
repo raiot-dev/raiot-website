@@ -1,4 +1,4 @@
-# 🧾 The Automata Hive Website
+# 🧾 The RAIOT Website
 
 [![GitHub version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/the-automata-hive/automata-hive-website.git)
 ![GitHub](https://img.shields.io/github/license/the-automata-hive/automata-hive-website)
