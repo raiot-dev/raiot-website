@@ -13,6 +13,10 @@ module.exports = {
         poppins: ['Poppins'],
         bebasNeue: ['Bebas Neue'],
       },
+      fontSize: {
+        '12xl': '12rem',
+        '24xl': '24rem',
+      },
     },
   },
   plugins: [],

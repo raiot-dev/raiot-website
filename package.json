@@ -1,7 +1,7 @@
 {
-  "name": "automata-hive-website",
+  "name": "raiot-website",
   "version": "1.0.0",
-  "description": "This is the landingpage and room reservation website of the automata-hive extracurricular activity",
+  "description": "This is the landingpage and room reservation website of the (R)obotics (a)nd (IoT) extracurricular activity",
   "private": true,
   "sideEffects": false,
   "scripts": {
