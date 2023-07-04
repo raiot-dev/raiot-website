@@ -1,27 +1,27 @@
 import { useRef, useState } from 'react';
 
 interface HashingProps {
-  name: string;
+  text: string;
 }
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01'.split('');
 
-export const Hashing = ({ name }: HashingProps) => {
+export const Hashing = ({ text }: HashingProps) => {
   const hashingSpanReference = useRef(null);
-  const [hashName, setHashName] = useState(name);
+  const [hashName, setHashName] = useState(text);
 
   const decryptName = () => {
     let iterations = 0;
     const interval = setInterval(() => {
       const hash: string[] = [];
       hashName.split('').map((_, i) => {
-        if (i < iterations) hash[i] = name.split('')[i];
-        else hash.push(ALPHABET[Number((Math.random() * 28).toFixed(0))]);
+        if (i < iterations) hash[i] = text.split('')[i];
+        else hash.push(ALPHABET[Number((Math.random() * ALPHABET.length).toFixed(0))]);
       });
 
       setHashName(hash.join(''));
 
-      if (iterations > name.length) clearInterval(interval);
+      if (iterations > text.length) clearInterval(interval);
 
       iterations += 1 / 2;
     }, 25);

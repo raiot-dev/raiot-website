@@ -6,9 +6,16 @@ interface TypeWriterProps {
   typeSpeed?: number;
   awaitDuration?: number;
   repeat?: boolean;
+  className?: string;
 }
 
-export const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = false }: TypeWriterProps) => {
+export const Typewriter = ({
+  content,
+  typeSpeed = 300,
+  awaitDuration = 3000,
+  repeat = false,
+  className = '',
+}: TypeWriterProps) => {
   const type = useRef<'write' | 'delete'>('write');
   const [text, setText] = useState<string>('');
   const { sleep } = useUtilities();
@@ -28,8 +35,9 @@ export const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, rep
   }, [text]);
 
   return (
-    <>
-      {text} <span className="blinking select-none text-primary">▐</span>
-    </>
+    <span className={className}>
+      {text}
+      <span className="blinking select-none text-primary">▐</span>
+    </span>
   );
 };

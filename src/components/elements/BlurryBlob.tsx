@@ -24,7 +24,7 @@ export const BlurryBlob = ({ children }: BlurrBloyProps) => {
   return (
     <>
       <div
-        className="rotating pointer-events-none absolute left-[50%] top-[50%] h-80 w-80 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30"
+        className="rotating pointer-events-none absolute left-[50%] top-[50%] h-52 w-52 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30"
         ref={blobReference}
       />
       <div className="pointer-events-none absolute left-0 top-0 h-full w-full backdrop-blur-3xl" />
