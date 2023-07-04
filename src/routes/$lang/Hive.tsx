@@ -1,21 +1,30 @@
 import { V2_MetaFunction, LoaderFunction, redirect } from '@remix-run/node';
 import { useTranslation } from 'react-i18next';
 
-import { BlurryBlob, Menu, Typewriter } from '~/components/';
+import { BlurryBlob, Menu, Typewriter } from '~/components/elements';
 
 import { Locales } from '~/models/settings';
 import { HttpStatusCode } from '~/models/http/statusCodes';
 import { fallbackLng, supportedLngs } from '~/config/locales/i18n';
+import Nightsky from '~/components/elements/Nightsky';
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: 'Automata Hive' },
+    { title: 'RAIOT' },
     {
       name: 'description',
       content:
-        'Automata Hive is an educational organization based in vorarlberg, austria. Automata Hive aims to teach students about Robotics and IoT in an open-source and friendly manner, while competing in competitions across austria.',
+        'RAIOT is an educational organization based in vorarlberg, austria. RAIOT aims to teach students about Robotics and IoT in an open-source and friendly manner, while competing in competitions across austria.',
+    },
+    {
+      name: 'keywords',
+      content: 'RAIOT, Robotics, IoT, Vorarlberg, Austria',
     },
   ];
+};
+
+export const handle = {
+  i18n: 'common',
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -26,10 +35,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   else return redirect(`/${fallbackLng}/error?code=${statusCode}`);
 };
 
-export const handle = {
-  i18n: 'common',
-};
-
 /*
  ? This route resolves to http://localhost:3000/$lang
  ? instead of http://localhost:3000/$lang/hive
@@ -38,7 +43,7 @@ const Hive = () => {
   const { t } = useTranslation('common');
 
   return (
-    <main className="relative h-screen w-full snap-mandatory overflow-x-hidden overflow-y-scroll bg-dark ">
+    <div className="relative h-screen w-full overflow-x-hidden overflow-y-scroll bg-dark">
       <Menu
         menuItems={[
           { link: '/#', name: t('page_homepage') },
@@ -47,26 +52,42 @@ const Hive = () => {
           { link: '/research', name: t('page_research') },
         ]}
       />
-      <BlurryBlob>
-        <section
-          about="Automata Hive Landing Page"
-          className="flex h-full w-full flex-col items-center justify-center overflow-hidden">
-          <div className="relative flex h-[48rem] w-[48rem] flex-col items-center justify-center">
-            <img
-              alt="Automatahive Logo"
-              className="pointer-events-none absolute z-[4] aspect-square h-full"
-              src="/assets/Binary_001.png"
-            />
-            <h1 className="absolute top-[50%] z-[5] w-2/3 flex-wrap text-center font-bebasNeue text-[10rem] leading-[0.8] text-white">
+      <header className="relative h-screen w-full">
+        <Nightsky
+          color="#ffffff"
+          minRadius={0.75}
+          maxRadius={2}
+          minOpacity={50}
+          maxOpacity={100}
+          minSpeed={0.005}
+          maxSpeed={0.125}
+          starCount={200}
+        />
+        <BlurryBlob>
+          <div className="grid h-full w-full place-items-center">
+            <h1
+              className="font-bebasNeue text-12xl text-transparent lg:text-24xl"
+              style={{
+                WebkitTextStroke: '0.5rem #fff',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+                fontSynthesis: 'none',
+                textRendering: 'optimizeLegibility',
+              }}>
               {t('brandname')}
             </h1>
+            <Typewriter
+              content={[t('contact-us-1'), t('contact-us-2'), t('contact-us-3')]}
+              typeSpeed={100}
+              repeat
+              className="text-3xl text-slate-700"
+            />
           </div>
-          <h2 className="font-poppins text-3xl text-secondary">
-            <Typewriter content={[t('contact-us-1'), t('contact-us-2'), t('contact-us-3')]} repeat typeSpeed={100} />
-          </h2>
-        </section>
-      </BlurryBlob>
-    </main>
+        </BlurryBlob>
+      </header>
+      <main role="main"></main>
+      <footer></footer>
+    </div>
   );
 };
 

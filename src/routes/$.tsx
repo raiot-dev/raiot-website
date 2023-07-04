@@ -1,4 +1,5 @@
 import { LoaderFunction, redirect } from '@remix-run/node';
+
 import { supportedLngs } from '~/config/locales/i18n';
 import { i18next } from '~/services';
 import { Locales } from '~/models/settings';
