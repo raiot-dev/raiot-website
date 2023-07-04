@@ -1,8 +1,9 @@
-<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M13.749 23.748H66.2491" stroke="white" stroke-width="5" stroke-miterlimit="10"
+<svg id="menu" width="79" height="38" viewBox="0 0 79 38" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <path id="menu-top" d="M3 3H55.5" stroke="white" stroke-width="5" stroke-miterlimit="10"
     stroke-linecap="round" />
-  <path d="M13.749 39.9997H66.2491" stroke="white" stroke-width="5" stroke-miterlimit="10"
+  <path id="menu-middle" d="M24 19H76.5" stroke="white" stroke-width="5" stroke-miterlimit="10"
     stroke-linecap="round" />
-  <path d="M13.749 56.2476H66.2491" stroke="white" stroke-width="5" stroke-miterlimit="10"
+  <path id="menu-bottom" d="M3 35.4995H55.5" stroke="white" stroke-width="5" stroke-miterlimit="10"
     stroke-linecap="round" />
 </svg>
