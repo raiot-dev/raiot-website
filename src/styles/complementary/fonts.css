@@ -5,21 +5,21 @@
     font-display: swap;
   }
   @font-face {
-    font-family: 'Poppins';
+    font-family: 'Kumbh Sans';
     font-weight: 400;
-    src: local('Poppins'), url('/fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Regular.woff2') format('woff2');
     font-display: swap;
   }
   @font-face {
-    font-family: 'Poppins';
+    font-family: 'Kumbh Sans';
     font-weight: 600;
-    src: local('Poppins'), url('/fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Medium.woff2') format('woff2');
     font-display: swap;
   }
   @font-face {
-    font-family: 'Poppins';
-    font-weight: 700;
-    src: local('Poppins'), url('/fonts/Poppins/Poppins-Bold.woff2') format('woff2');
+    font-family: 'Kumbh Sans';
+    font-weight: bold;
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Black.woff2') format('woff2');
     font-display: swap;
   }
 }

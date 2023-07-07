@@ -10,7 +10,7 @@ module.exports = {
         secondary: '#4C6176',
       },
       fontFamily: {
-        poppins: ['Poppins'],
+        kumbhSans: ['Kumbh Sans'],
         bebasNeue: ['Bebas Neue'],
       },
       fontSize: {
