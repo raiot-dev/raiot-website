@@ -1,0 +1,17 @@
+.text-stroke-24xl {
+    -webkit-text-stroke: 0.8rem #fff;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+}
+
+.text-stroke-12xl {
+    -webkit-text-stroke: 0.6rem #fff;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+}
+
+.text-stroke-8xl {
+    -webkit-text-stroke: 0.3rem #fff;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+}

@@ -7,7 +7,6 @@ import { Locales } from '~/models/settings';
 import { HttpStatusCode } from '~/models/http/statusCodes';
 import { fallbackLng, supportedLngs } from '~/config/locales/i18n';
 import Nightsky from '~/components/elements/Nightsky';
-import { useState } from 'react';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -67,21 +66,14 @@ const Hive = () => {
         <BlurryBlob>
           <div className="flex h-full w-full flex-col items-center justify-center">
             <h1
-              className="font-kumbhSans text-12xl font-bold uppercase text-transparent lg:text-24xl"
-              style={{
-                WebkitTextStroke: '0.75rem #fff',
-                WebkitFontSmoothing: 'antialiased',
-                MozOsxFontSmoothing: 'grayscale',
-                fontSynthesis: 'none',
-                textRendering: 'optimizeLegibility',
-              }}>
+              className="font-kumbhSans text-stroke-8xl text-8xl font-bold uppercase text-transparent md:text-stroke-12xl md:text-12xl lg:text-24xl lg:text-stroke-24xl">
               {t('brandname')}
             </h1>
             <Typewriter
               content={[t('contact-us-1'), t('contact-us-2'), t('contact-us-3')]}
               typeSpeed={100}
               repeat
-              className="text-3xl text-slate-700"
+              className="text-2xl lg:text-3xl text-slate-700"
             />
           </div>
         </BlurryBlob>
