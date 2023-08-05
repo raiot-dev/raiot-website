@@ -1,16 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+
+import { TypeWriterConfiguration } from '~/models/visuals';
 import { useUtilities } from '~/services';
 
-interface TypeWriterProps {
-  content: string[];
-  typeSpeed?: number;
-  awaitDuration?: number;
-  repeat?: boolean;
+interface TypeWriterProps extends TypeWriterConfiguration {
   className?: string;
 }
 
 export const Typewriter = ({
   content,
+  cursor = '▐',
   typeSpeed = 300,
   awaitDuration = 3000,
   repeat = false,
@@ -37,7 +36,7 @@ export const Typewriter = ({
   return (
     <span className={className}>
       {text}
-      <span className="blinking select-none text-primary">▐</span>
+      <span className="animation-blinking select-none text-primary">{cursor}</span>
     </span>
   );
 };

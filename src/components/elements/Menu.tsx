@@ -5,19 +5,26 @@ import { Link } from '@remix-run/react';
 
 interface MenuProps {
   menuItems: Array<{ name: string; link: string }>;
+  onClick?: (e: any) => void;
 }
 
-export const Menu = ({ menuItems }: MenuProps) => {
+export const Menu = ({ menuItems, onClick = (e) => {} }: MenuProps) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
-      <button className="absolute z-[2] h-20 w-20 p-4" onClick={() => setOpenMenu(!openMenu)} name="Menubutton">
+      <button
+        className="fixed z-[2] h-20 w-20 p-4 mix-blend-difference"
+        onClick={(e) => {
+          onClick(e);
+          setOpenMenu(!openMenu);
+        }}
+        name="Menubutton">
         <img src="/assets/menu.svg" alt="Menubutton to open menu" className="h-full w-full" />
       </button>
       <div
         className={`relative z-[1] flex flex-col justify-center bg-dark transition-all ${
-          openMenu ? 'h-full w-full opacity-100' : 'h-0 w-0 overflow-hidden opacity-0'
+          openMenu ? 'h-screen w-screen opacity-100' : 'h-0 w-0 overflow-hidden opacity-0'
         }`}>
         <div className="dot-pattern absolute" />
         <nav className="pl-10 lg:pl-20">

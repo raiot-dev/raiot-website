@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { useNightsky, NightSkyConfiguration } from '~/hooks/useNightsky';
+
+import { NightSkyConfiguration } from '~/models/visuals';
+import { useNightsky } from '~/hooks/useNightsky';
 
 interface NightSkyProps extends NightSkyConfiguration {
   className?: string;
 }
 
-const Nightsky = (props: NightSkyProps) => {
+export const Nightsky = (props: NightSkyProps) => {
   const canvas = useRef<HTMLCanvasElement>(null);
   const { initialize } = useNightsky();
 
@@ -21,5 +23,3 @@ const Nightsky = (props: NightSkyProps) => {
     />
   );
 };
-
-export default Nightsky;

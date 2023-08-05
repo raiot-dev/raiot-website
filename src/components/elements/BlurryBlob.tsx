@@ -10,21 +10,18 @@ export const BlurryBlob = ({ children }: BlurrBloyProps) => {
   const { detectMobile } = useUtilities();
 
   useEffect(() => {
-    document.body.onpointermove = ({ clientX, clientY }) => {
+    document.body.onpointermove = ({ pageX, pageY }) => {
       if (!blobReference.current) return;
       if (detectMobile(navigator)) blobReference.current.style.display = 'none';
 
-      blobReference.current.animate(
-        { left: `${clientX}px`, top: `${clientY}px` },
-        { duration: 3500, fill: 'forwards' }
-      );
+      blobReference.current.animate({ left: `${pageX}px`, top: `${pageY}px` }, { duration: 3500, fill: 'forwards' });
     };
   }, [blobReference]);
 
   return (
     <>
       <div
-        className="rotating pointer-events-none absolute left-[50%] top-[50%] h-52 w-52 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30"
+        className="animation-rotating pointer-events-none absolute left-[50%] top-[50%] h-52 w-52 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30"
         ref={blobReference}
       />
       <div className="pointer-events-none absolute left-0 top-0 h-full w-full backdrop-blur-3xl" />
