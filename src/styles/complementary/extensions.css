@@ -1,17 +1,27 @@
-.text-stroke-24xl {
-    -webkit-text-stroke: 0.8rem #fff;
-    text-rendering: optimizeLegibility;
-    font-synthesis: none;
-}
+@tailwind utilities;
 
-.text-stroke-12xl {
-    -webkit-text-stroke: 0.6rem #fff;
+@layer utilities {
+  .text-stroke-24xl {
+    -webkit-text-stroke: 0.75rem;
     text-rendering: optimizeLegibility;
     font-synthesis: none;
-}
+  }
 
-.text-stroke-8xl {
-    -webkit-text-stroke: 0.3rem #fff;
+  .text-stroke-12xl {
+    -webkit-text-stroke: 0.5rem;
     text-rendering: optimizeLegibility;
     font-synthesis: none;
+  }
+
+  .text-stroke-8xl {
+    -webkit-text-stroke: 0.25rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-stroke-4xl {
+    -webkit-text-stroke: 0.125rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
 }

@@ -1,9 +1,13 @@
-.blinking {
+.animation-blinking {
   animation: blink 1s step-end infinite;
 }
 
-.rotating {
+.animation-rotating {
   animation: rotate 20s infinite;
+}
+
+.animation-slide {
+  animation: slide 40s linear infinite;
 }
 
 @keyframes blink {
@@ -28,6 +32,11 @@
   }
 }
 
-#menu {
-  background: red;
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

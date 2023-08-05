@@ -6,12 +6,16 @@ module.exports = {
   publicPath: '/build/',
   devServerPort: 8002,
   serverMinify: false,
+  tailwind: true,
+  serverModuleFormat: 'cjs',
+  serverDependenciesToBundle: ['chalk'],
   future: {
-    unstable_tailwind: true, // will eventually become stable
-    v2_errorBoundary: true,
+    v2_dev: true,
     v2_meta: true,
-    v2_normalizeFormMethod: true,
+    v2_headers: true,
+    v2_errorBoundary: true,
     v2_routeConvention: true,
+    v2_normalizeFormMethod: true,
   },
   routes: async (defineRoutes) =>
     defineRoutes((route) => {

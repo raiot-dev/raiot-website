@@ -1,18 +1,7 @@
-import { HexColor } from '~/models/colors';
+import { NightSkyConfiguration } from '~/models/visuals';
 import { useUtilities } from '~/services';
 
 const { getRandomValue } = useUtilities();
-
-export interface NightSkyConfiguration {
-  starCount: number;
-  color: HexColor;
-  minRadius: number;
-  maxRadius: number;
-  minOpacity: number;
-  maxOpacity: number;
-  minSpeed: number;
-  maxSpeed: number;
-}
 
 interface Star {
   radius: number;
