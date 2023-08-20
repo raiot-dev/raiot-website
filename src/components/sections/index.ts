@@ -1,4 +1,4 @@
 export * from './Endeavours';
-export * from './Landingpage';
+export * from './Header';
 export * from './Reputation';
 export * from './Timeline';
