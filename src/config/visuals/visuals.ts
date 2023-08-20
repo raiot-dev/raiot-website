@@ -8,5 +8,5 @@ export const NightskyConfig: NightSkyConfiguration = {
   maxOpacity: 100,
   minSpeed: 0.005,
   maxSpeed: 0.125,
-  starCount: 250,
+  starCount: 150,
 };

@@ -19,7 +19,7 @@ module.exports = {
   },
   routes: async (defineRoutes) =>
     defineRoutes((route) => {
-      route('/:lang/', 'routes/$lang/Hive.tsx');
+      route('/:lang/', 'routes/$lang/Landingpage.tsx');
       route('/:lang/error', 'routes/$lang/Error.tsx');
     }),
 };
