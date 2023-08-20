@@ -14,7 +14,7 @@ export const Hashing = ({ text }: HashingProps) => {
     let iterations = 0;
     const interval = setInterval(() => {
       const hash: string[] = [];
-      hashName.split('').map((_, i) => {
+      hashName.split('').forEach((_, i) => {
         if (i < iterations) hash[i] = text.split('')[i];
         else hash.push(ALPHABET[Number((Math.random() * ALPHABET.length).toFixed(0))]);
       });
@@ -23,7 +23,7 @@ export const Hashing = ({ text }: HashingProps) => {
 
       if (iterations > text.length) clearInterval(interval);
 
-      iterations += 1 / 2;
+      iterations += 1 / (2 / (text.length / 10));
     }, 25);
   };
 

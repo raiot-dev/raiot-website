@@ -12,7 +12,7 @@ export const BlurryBlob = ({ children }: BlurrBloyProps) => {
   useEffect(() => {
     document.body.onpointermove = ({ pageX, pageY }) => {
       if (!blobReference.current) return;
-      if (detectMobile(navigator)) blobReference.current.style.display = 'none';
+      if (detectMobile(navigator)) return (blobReference.current.style.display = 'none');
 
       blobReference.current.animate({ left: `${pageX}px`, top: `${pageY}px` }, { duration: 3500, fill: 'forwards' });
     };

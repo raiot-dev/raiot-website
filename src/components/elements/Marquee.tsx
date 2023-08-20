@@ -14,7 +14,7 @@ export const Marquee = () => {
 
   return (
     <div
-      className="animation-slide relative flex h-full w-auto flex-row items-center overflow-hidden border-t-[1px] border-secondary bg-dark"
+      className="animation-slide relative flex h-full min-h-[12rem] w-auto flex-row items-center overflow-hidden border-t-[1px] border-secondary bg-dark"
       style={{ width: images.length * 2 * 300 + 'px' }}>
       {[...images, ...images].map(({ image, link }, i) => {
         return (
