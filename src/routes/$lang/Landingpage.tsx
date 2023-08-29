@@ -8,7 +8,7 @@ import { Locales } from '~/models/settings';
 import { HttpStatusCode } from '~/models/http/statusCodes';
 
 import { fallbackLng, supportedLngs } from '~/config/locales/i18n';
-import { Header } from '~/components/sections';
+import { Contact, Footer, Header, Reputation, WhoAmI } from '~/components/sections';
 import { Endeavours, Timeline } from '~/components/sections/';
 
 export const meta: V2_MetaFunction = () => {
@@ -54,10 +54,13 @@ const Hive = () => {
         <Menu menuItems={menuItems} onClick={() => setAllowScroll(!allowScroll)} />
         <Header />
         <main role="main" className="snap-y snap-mandatory">
+          <WhoAmI />
           <Endeavours />
           <Timeline />
+          <Reputation />
+          <Contact />
         </main>
-        <footer></footer>
+        <Footer />
       </BlurryBlob>
     </div>
   );

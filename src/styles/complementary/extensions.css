@@ -24,4 +24,12 @@
     text-rendering: optimizeLegibility;
     font-synthesis: none;
   }
+
+  .text-last-center {
+    text-align-last: center;
+  }
+
+  .text-last-left {
+    text-align-last: left;
+  }
 }
