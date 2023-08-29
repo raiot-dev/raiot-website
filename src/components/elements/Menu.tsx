@@ -29,7 +29,7 @@ export const Menu = ({ menuItems, onClick = (e) => {} }: MenuProps) => {
         <div className="dot-pattern absolute" />
         <nav className="pl-10 lg:pl-20">
           {menuItems.map(({ name, link }, i) => (
-            <div key={name} className="group/item">
+            <li key={name} className="group/item">
               <div className="relative flex flex-row">
                 <div className="mr-4 flex w-2 items-center justify-center md:w-3 lg:w-4">
                   <div className="h-full w-1 rounded-full bg-white transition-all duration-500 group-hover/item:bg-primary lg:w-2" />
@@ -43,7 +43,7 @@ export const Menu = ({ menuItems, onClick = (e) => {} }: MenuProps) => {
               {i !== menuItems.length - 1 && (
                 <div className="my-4 aspect-square w-2 rounded-full bg-white md:w-3 lg:w-4" />
               )}
-            </div>
+            </li>
           ))}
         </nav>
       </div>
