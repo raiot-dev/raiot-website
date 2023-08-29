@@ -1,0 +1,35 @@
+@tailwind utilities;
+
+@layer utilities {
+  .text-stroke-24xl {
+    -webkit-text-stroke: 0.75rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-stroke-12xl {
+    -webkit-text-stroke: 0.5rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-stroke-8xl {
+    -webkit-text-stroke: 0.25rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-stroke-4xl {
+    -webkit-text-stroke: 0.125rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-last-center {
+    text-align-last: center;
+  }
+
+  .text-last-left {
+    text-align-last: left;
+  }
+}

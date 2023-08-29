@@ -1,0 +1,27 @@
+@tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue'), url('/fonts/BebasNeue/BebasNeue-Regular.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Kumbh Sans';
+    font-weight: 400;
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Regular.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Kumbh Sans';
+    font-weight: 600;
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Medium.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Kumbh Sans';
+    font-weight: bold;
+    src: local('KumbhSans'), url('/fonts/KumbhSans/KumbhSans-Black.woff2') format('woff2');
+    font-display: swap;
+  }
+}
