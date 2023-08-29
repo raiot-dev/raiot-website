@@ -6,10 +6,10 @@ export const Endeavours = () => {
 
   return (
     <>
-      <section className="relative h-[90vh] w-full snap-always bg-white">
+      <section id="endeavours" className="relative h-[90vh] w-full snap-always bg-white">
         <SectionHeadline
           pageTitel={t('page_endeavours')}
-          pageContent="What we persue & our efforts"
+          pageContent={t('page_endeavours-subheading')}
           textColor="text-dark"
         />
         <div></div>
