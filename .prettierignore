@@ -3,7 +3,7 @@
 /.cache
 /api
 /.git
-package-lock.json
+yarn.json
 /build/
 /public/build
 /public/_build
