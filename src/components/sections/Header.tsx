@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from '@remix-run/react';
 
-import { Typewriter, Nightsky, Marquee } from '~/components/elements';
+import { Typewriter, Nightsky } from '~/components/elements';
 
 import { NightskyConfig } from '~/config/visuals/visuals';
 
