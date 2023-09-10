@@ -62,12 +62,9 @@ export const Footer = () => {
         <span className="p-3">{t('footer_newsletter-update')}</span>
       </div>
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
-        Copyright © 2023 Automata Hive. All rights reserved.
-        <div>
-          &nbsp;|&nbsp;<Link to="/policies">Privacy Policy</Link>
-          &nbsp;|&nbsp;<Link to="/legal">Legal</Link>
-          &nbsp;|&nbsp;<Link to="#">Contact</Link>
-        </div>
+        Copyright © 2023 Automata Hive. All rights reserved. &nbsp;|&nbsp;<Link to="/policies">Privacy Policy</Link>
+        &nbsp;|&nbsp;<Link to="/legal">Legal</Link>
+        &nbsp;|&nbsp;<Link to="/contact">Contact</Link>
       </p>
     </footer>
   );

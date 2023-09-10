@@ -5,3 +5,4 @@ export * from './Nightsky';
 export * from './Hashing';
 export * from './Marquee';
 export * from './Menu';
+export * from './ReputationSlide';

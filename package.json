@@ -32,6 +32,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.0",
+    "react-stacked-center-carousel": "^1.0.12",
     "remix": "^1.6.5",
     "remix-i18next": "^5.1.1"
   },
