@@ -49,18 +49,18 @@ class Stars {
   private draw({ x, y, color, radius }: Star) {
     this.ctx.beginPath();
     this.ctx.fillStyle = color;
-    this.ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+    this.ctx.arc(Math.floor(x), Math.floor(y), radius, 0, 2 * Math.PI, false);
     this.ctx.fill();
     this.ctx.closePath();
   }
 
   private resetStar(star: Star) {
     if (getRandomValue(0, 1) > 0.5) {
-      star.x = -star.radius;
-      star.y = getRandomValue(0, this.ctx.canvas.height);
+      star.x = Math.round(-star.radius);
+      star.y = Math.round(getRandomValue(0, this.ctx.canvas.height));
     } else {
-      star.x = getRandomValue(0, this.ctx.canvas.width);
-      star.y = this.ctx.canvas.height + star.radius;
+      star.x = Math.round(getRandomValue(0, this.ctx.canvas.width));
+      star.y = Math.round(this.ctx.canvas.height + star.radius);
     }
   }
 }
