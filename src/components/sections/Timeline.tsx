@@ -50,7 +50,7 @@ export const Timeline = () => {
             <div className="my-4 aspect-square w-2 rounded-full bg-white md:w-3 lg:w-4" />
           </div>
         ))}
-        <button className="flex w-80 flex-row items-center justify-evenly rounded-md bg-primary p-4 font-kumbhSans text-2xl font-semibold text-white shadow-sm shadow-primary">
+        <button className="flex w-80 cursor-pointer flex-row items-center justify-evenly rounded-md bg-primary p-4 font-kumbhSans text-2xl font-semibold text-white shadow-sm shadow-primary">
           <img src="/assets/book.svg" className="aspect-square w-8" />
           <span>Continue Reading</span>
         </button>
