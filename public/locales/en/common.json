@@ -32,5 +32,8 @@
   "footer_contact": "Contact",
   "footer_newsletter": "Newsletter",
   "footer_newsletter-update": "Get Every Single Update to Join Our Newsletter",
-  "reputation_feedback": "Don't take our word for it,\r\ncheck out what people say about us;"
+  "reputation_feedback": "Don't take our word for it,\r\ncheck out what people say about us;",
+  "contact_placeholder_name": "Your Name*",
+  "contact_placeholder_email": "Your E-Mail*",
+  "contact_placeholder_message": "Your Message*"
 }
