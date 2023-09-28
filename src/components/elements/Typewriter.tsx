@@ -34,9 +34,9 @@ export const Typewriter = ({
   }, [text]);
 
   return (
-    <span className={className}>
+    <span className={`${className} select-none`}>
       {text}
-      <span className="animation-blinking select-none text-primary">{cursor}</span>
+      <span className="animation-blinking text-primary">{cursor}</span>
     </span>
   );
 };

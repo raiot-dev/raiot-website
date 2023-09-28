@@ -12,7 +12,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="relative h-screen w-full snap-always bg-transparent">
-      <SectionHeadline className="h-1/5" pageTitel={t('page_contact')} pageContent={t('page_contact-subheading')} />
+      <SectionHeadline pageTitel={t('page_contact')} pageContent={t('page_contact-subheading')} />
       <div className="flex h-4/5 flex-row items-center justify-center gap-x-10">
         <img src="/assets/binary.png" className="absolute aspect-square w-5/6 opacity-25 md:relative md:w-1/3" />
         <Form method="POST" action="/" className="relative flex w-5/6 flex-col gap-10 md:w-1/3">
