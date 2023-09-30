@@ -12,10 +12,9 @@ export const useIsVisible = () => {
     options?: { persistent: boolean } & IntersectionObserverInit
   ): VisibilityType => {
     const [isVisible, setIsVisible] = useState<VisibilityType>('invisible');
-
     useEffect(() => {
       const observer = new IntersectionObserver(
-        ([entry]) => setIsVisible(options?.persistent ? 'visible' : entry.isIntersecting ? 'visible' : 'invisible'),
+        ([entry]) => setIsVisible(entry.isIntersecting ? 'visible' : 'invisible'),
         options
       );
 
