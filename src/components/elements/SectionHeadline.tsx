@@ -30,13 +30,13 @@ export const SectionHeadline = ({
       ref={headingRef}
       className={`${visibilityState[isVisible]} relative flex w-full select-none flex-col items-center justify-center py-8 transition-all duration-1000 md:flex-row-reverse md:items-start md:justify-normal md:px-12 ${className}`}>
       <h2
-        className={`text-stroke-4xl w-min text-center font-kumbhSans text-5xl font-bold uppercase text-transparent text-stroke-color-secondary lg:text-9xl`}>
+        className={`text-stroke-4xl w-min text-center font-kumbhSans text-5xl font-bold uppercase text-transparent text-stroke-color-secondary md:text-7xl lg:text-9xl`}>
         {pageTitel}
       </h2>
-      <p
-        className={`${textColor} font-bebasNeue text-xl text-stroke-color-transparent md:absolute md:bottom-0 md:right-2 md:px-12 md:py-8  lg:bottom-2 lg:text-5xl`}>
+      <span
+        className={`${textColor} font-bebasNeue text-xl text-stroke-color-transparent md:absolute md:bottom-0 md:right-2 md:px-12 md:py-8 md:text-3xl  lg:bottom-2 lg:text-5xl`}>
         {pageContent}
-      </p>
+      </span>
     </hgroup>
   );
 };

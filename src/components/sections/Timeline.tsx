@@ -31,9 +31,9 @@ export const Timeline = () => {
   const { t } = useTranslation('common');
 
   return (
-    <section id="timeline" className="relative min-h-[140vh] w-full snap-always">
+    <section id="timeline" className="relative w-full snap-always">
       <SectionHeadline pageTitel={t('page_timeline')} pageContent={t('page_timeline-subheading')} />
-      <div className="pl-10 lg:pl-20">
+      <div className="py-16 pl-10 lg:pl-20">
         {mockData.map(({ name, link, text }) => (
           <div key={name} className="group/item pb-12">
             <div className="relative flex flex-row">
