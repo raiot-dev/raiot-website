@@ -18,7 +18,7 @@ export const Nightsky = (props: NightSkyProps) => {
   return (
     <canvas
       id="canvas-nightsky"
-      className={`pointer-events-none absolute z-[1] h-full w-full ${props.className}`}
+      className={`pointer-events-none absolute z-[1] hidden h-full w-full lg:block ${props.className}`}
       ref={canvas}
     />
   );

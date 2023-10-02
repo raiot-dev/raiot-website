@@ -93,12 +93,11 @@ export const useNightsky = () => {
   };
 
   const setupEventHandlers = () => {
-    window.addEventListener('resize', () => {
-      ctx.canvas.width = window.innerWidth;
-      ctx.canvas.height = window.innerHeight;
-
-      stars.adapt();
-    });
+    // window.addEventListener('resize', () => {
+    //   ctx.canvas.width = window.innerWidth;
+    //   ctx.canvas.height = window.innerHeight;
+    //   stars.adapt();
+    // });
   };
 
   return { initialize };

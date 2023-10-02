@@ -18,11 +18,11 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="grid h-screen w-full grid-cols-5 grid-rows-2 overflow-hidden bg-secondary bg-opacity-25 p-3 font-kumbhSans md:h-[50vh] md:px-10">
-      <div className="col-span-2 row-span-2 hidden h-full grid-cols-2 md:grid">
+      className="grid h-screen w-full grid-cols-4 grid-rows-2 overflow-hidden bg-secondary bg-opacity-25 p-3 font-kumbhSans md:h-[50vh] md:px-10">
+      <div className="col-span-2 row-span-2 hidden h-full grid-cols-2 pt-5 md:grid">
         {images.map(({ image, link }, i) => (
-          <Link key={`image-index-${i}`} to={link} target="_blank" className={`w-2/3 object-contain px-4`}>
-            <img src={image} />
+          <Link key={`image-index-${i}`} to={link} target="_blank" className={`w-1/2 object-contain px-4`}>
+            <img src={image} className="scale-[2.5] lg:scale-100" />
           </Link>
         ))}
       </div>
@@ -56,10 +56,6 @@ export const Footer = () => {
         <a href="tel:[TODO:]" className="p-3">
           {t('phone')}
         </a>
-      </div>
-      <div className="col-span-2 flex w-full flex-col items-start text-lg text-white md:col-span-1">
-        <span className="p-3 text-2xl font-bold">{t('footer_newsletter')}</span>
-        <span className="p-3">{t('footer_newsletter-update')}</span>
       </div>
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
         Copyright © 2023 Automata Hive. All rights reserved. &nbsp;|&nbsp;<Link to="/policies">Privacy Policy</Link>

@@ -5,11 +5,7 @@ import { HttpStatusCode } from '~/models/http/statusCodes';
 
 export const handle = { i18n: 'error' };
 
-export const loader: LoaderFunction = ({
-  request,
-}): {
-  statusCode: number;
-} => {
+export const loader: LoaderFunction = ({ request }): { statusCode: number } => {
   const queryParameters = new URLSearchParams(request.url.split('?')[1]);
   const queryHttpCode = Number(queryParameters.get('code'));
   const statusCode: HttpStatusCode = Object.values(HttpStatusCode).includes(queryHttpCode)
@@ -21,9 +17,7 @@ export const loader: LoaderFunction = ({
 
 const CatchAll = () => {
   const { t } = useTranslation('common');
-  const { statusCode } = useLoaderData<{
-    statusCode: HttpStatusCode;
-  }>();
+  const { statusCode } = useLoaderData<{ statusCode: HttpStatusCode }>();
 
   return <div>{t(`error:code_${HttpStatusCode[statusCode]}`)}</div>;
 };

@@ -32,7 +32,7 @@ export const Reputation = () => {
       <div className="pointer-events-none absolute right-1/3 h-screen w-1/4 rotate-45 rounded-[100%] bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-20 blur-3xl " />
       <SectionHeadline pageTitel={t('page_reputation')} pageContent={t('page_reputation-subheading')} />
       <div className="flex h-[65%] w-full flex-col items-center justify-center">
-        <h3 className="whitespace-pre-line pt-16 text-center font-bebasNeue text-3xl text-white lg:p-0 lg:text-5xl">
+        <h3 className="whitespace-pre-line pt-16 text-center font-bebasNeue text-xl text-white md:text-3xl lg:p-0 lg:text-5xl">
           {t(`reputation_feedback`)}
         </h3>
         <div className="flex w-full flex-row items-center justify-evenly pt-5">

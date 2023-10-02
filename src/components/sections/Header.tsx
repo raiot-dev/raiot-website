@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <header id="header" className="relative h-screen w-full">
-      <Nightsky {...NightskyConfig} />
+      {<Nightsky {...NightskyConfig} />}
       <div className="flex h-full w-full flex-col items-center justify-center">
         <h1 className="text-stroke-8xl md:text-stroke-12xl lg:text-stroke-24xl font-kumbhSans text-8xl font-bold uppercase text-transparent text-stroke-color-[white] md:text-12xl lg:text-24xl">
           {t('brandname')}

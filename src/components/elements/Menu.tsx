@@ -35,7 +35,7 @@ export const Menu = ({ menuItems, onClick = (e) => {} }: MenuProps) => {
                   <div className="h-full w-1 rounded-full bg-white transition-all duration-500 group-hover/item:bg-primary lg:w-2" />
                 </div>
                 <Link
-                  className="h-auto w-5/6 overflow-hidden hyphens-auto whitespace-pre-wrap font-bebasNeue text-6xl text-white no-underline opacity-50 transition-opacity group-hover/item:opacity-100 md:text-8xl lg:text-9xl"
+                  className="h-auto w-5/6 overflow-hidden hyphens-auto whitespace-pre-wrap font-bebasNeue text-6xl text-white no-underline opacity-50 transition-opacity group-hover/item:opacity-100 md:text-7xl lg:text-8xl"
                   to={link}>
                   <Hashing text={name} />
                 </Link>
