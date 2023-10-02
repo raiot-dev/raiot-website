@@ -8,9 +8,9 @@ import { SettingsContext } from '~/context/settings/';
 import { Locales, Themes } from '~/models/settings';
 import { i18next, getUUID } from '~/services';
 
-import stylesheet from '../build/styles/tailwind.css';
+import stylesheet from '~/styles/tailwind.css';
 
-export const meta: V2_MetaFunction = () => [{ title: 'schmaenjael.dev' }, { charSet: 'utf-8' }];
+export const meta: V2_MetaFunction = () => [{ charSet: 'utf-8' }];
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
 
@@ -36,11 +36,19 @@ const Root = () => {
     <html lang={locale} dir={i18n.dir(locale)}>
       <head>
         <Meta />
+        <Links />
+        <link
+          rel="preload"
+          href="/fonts/BebasNeue/BebasNeue-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           httpEquiv="Content-Security-Policy"
           content={`script-src 'nonce-${nonce}' 'unsafe-inline' https: http: 'nonce-${nonce}' 'strict-dynamic'; base-uri 'self'; object-src 'none';`}
         />
-        <Links />
       </head>
       <body>
         <SettingsContext.Provider
@@ -48,8 +56,7 @@ const Root = () => {
             locale,
             theme,
             setTheme,
-          }}
-        >
+          }}>
           <Outlet />
         </SettingsContext.Provider>
         <ScrollRestoration nonce={nonce} />

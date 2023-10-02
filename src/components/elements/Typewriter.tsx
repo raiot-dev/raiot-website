@@ -1,14 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
+
+import { TypeWriterConfiguration } from '~/models/visuals';
 import { useUtilities } from '~/services';
 
-interface TypeWriterProps {
-  content: string[];
-  typeSpeed?: number;
-  awaitDuration?: number;
-  repeat?: boolean;
+interface TypeWriterProps extends TypeWriterConfiguration {
+  className?: string;
 }
 
-const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = false }: TypeWriterProps) => {
+export const Typewriter = ({
+  content,
+  cursor = '▐',
+  typeSpeed = 300,
+  awaitDuration = 3000,
+  repeat = false,
+  className = '',
+}: TypeWriterProps) => {
   const type = useRef<'write' | 'delete'>('write');
   const [text, setText] = useState<string>('');
   const { sleep } = useUtilities();
@@ -28,10 +34,9 @@ const Typewriter = ({ content, typeSpeed = 300, awaitDuration = 3000, repeat = f
   }, [text]);
 
   return (
-    <>
-      {text} <span className="text-primary blinking select-none">▐</span>
-    </>
+    <span className={`${className} select-none`}>
+      {text}
+      <span className="animation-blinking text-primary">{cursor}</span>
+    </span>
   );
 };
-
-export default Typewriter;

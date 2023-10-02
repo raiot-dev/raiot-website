@@ -12,16 +12,16 @@ import { i18next } from './services';
 import { fallbackLng, i18nConfig, supportedLngs } from './config/locales/i18n';
 import { Locales } from './models/settings';
 
-const ABORT_DELAY = 5_000;
+const ABORT_DELAY: number = 5_000;
 
 const handleRequest = async (request: Request, status: number, headers: Headers, context: EntryContext) => {
-  const lang = await i18next.getLocale(request);
   const requestLocale = request.url.split(/\/|\?/g).splice(3)[0] as Locales;
+  const lang = await i18next.getLocale(request);
   const locale = supportedLngs.includes(requestLocale) ? requestLocale : lang || fallbackLng;
   const ns = i18next.getRouteNamespaces(context);
-  const instance = createInstance();
+  const localizationInstance = createInstance();
 
-  await instance
+  await localizationInstance
     .use(initReactI18next)
     .use(Backend)
     .init({
@@ -35,7 +35,7 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
 
   return new Promise((resolve, reject) => {
     const { pipe, abort } = renderToPipeableStream(
-      <I18nextProvider i18n={instance}>
+      <I18nextProvider i18n={localizationInstance}>
         <RemixServer context={context} url={request.url} />
       </I18nextProvider>,
       {
