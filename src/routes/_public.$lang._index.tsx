@@ -38,20 +38,9 @@ export const loader: LoaderFunction = async ({ request }) => {
  ? instead of http://localhost:3000/$lang/hive
  */
 const Hive = () => {
-  const { t } = useTranslation('common');
-  const [allowScroll, setAllowScroll] = useState(true);
-
-  const menuItems = [
-    { link: '/#', name: t('page_homepage') },
-    { link: '/goals', name: t('page_endeavours') },
-    { link: '/timeline', name: t('page_timeline') },
-    { link: '/research', name: t('page_research') },
-  ];
-
   return (
-    <div className={`relative w-full overflow-hidden bg-dark ${!allowScroll && 'max-h-screen overflow-y-hidden'}`}>
+    <>
       <BlurryBlob>
-        <Menu menuItems={menuItems} onClick={() => setAllowScroll(!allowScroll)} />
         <Header />
         <main role="main" className="snap-y snap-mandatory">
           <WhoAmI />
@@ -60,9 +49,8 @@ const Hive = () => {
           <Reputation />
           <Contact />
         </main>
-        <Footer />
       </BlurryBlob>
-    </div>
+    </>
   );
 };
 

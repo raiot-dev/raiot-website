@@ -17,9 +17,4 @@ module.exports = {
     v2_routeConvention: true,
     v2_normalizeFormMethod: true,
   },
-  routes: async (defineRoutes) =>
-    defineRoutes((route) => {
-      route('/:lang/', 'routes/$lang/Landingpage.tsx');
-      route('/:lang/error', 'routes/$lang/Error.tsx');
-    }),
 };
