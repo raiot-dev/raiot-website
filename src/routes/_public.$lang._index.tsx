@@ -1,8 +1,6 @@
 import { V2_MetaFunction, LoaderFunction, redirect } from '@remix-run/node';
-import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
 
-import { BlurryBlob, Menu } from '~/components/elements';
+import { BlurryBlob } from '~/components/elements';
 
 import { Locales } from '~/models/settings';
 import { HttpStatusCode } from '~/models/http/statusCodes';

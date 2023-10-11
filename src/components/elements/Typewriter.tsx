@@ -28,7 +28,7 @@ export const Typewriter = ({
   useEffect(() => {
     if (repeat && index.current === content.length - 1 && text === '' && type.current === 'delete') index.current = -1;
     if (text === '') { index.current += 1; type.current = 'write'; } // prettier-ignore
-    if (text === content[index.current]) type.current = 'delete';
+    if (repeat && text === content[index.current]) type.current = 'delete';
 
     sleep(text === content[index.current] || text === '' ? awaitDuration : typeSpeed).then(writer[type.current]);
   }, [text]);

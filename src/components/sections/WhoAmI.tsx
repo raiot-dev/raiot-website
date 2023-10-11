@@ -35,7 +35,7 @@ export const WhoAmI = () => {
         </div>
         <p className="pb-4 text-center font-kumbhSans text-lg text-white">{t('appreciate-supporters')}</p>
       </section>
-      <Marquee backgroundColor="bg-dark" />
+      <Marquee backgroundColor="bg-dark" errorMessage={t('error_no-data')} />
     </>
   );
 };
