@@ -13,22 +13,34 @@ export const useIsVisible = () => {
     options?: { persistent: boolean } & IntersectionObserverInit
   ): VisibilityType => {
     const { detectMobile } = useUtilities();
+    const [visibility, setVisibility] = useState<VisibilityType>('invisible');
 
-    const [isVisible, setIsVisible] = useState<VisibilityType>('invisible');
-    useEffect(() => {
-      if (detectMobile(navigator)) setIsVisible('visible');
-      else {
-        const observer = new IntersectionObserver(
-          ([entry]) => setIsVisible(entry.isIntersecting ? 'visible' : 'invisible'),
-          options
-        );
+    if (!options?.persistent)
+      useEffect(() => {
+        if (detectMobile(navigator)) setVisibility('visible');
+        else {
+          const observer = new IntersectionObserver(([entry]) => {
+            setVisibility(entry.isIntersecting ? 'visible' : 'invisible');
+          }, options);
 
-        if (ref?.current) observer.observe(ref.current);
-        return () => (ref?.current ? observer.unobserve(ref.current) : undefined);
-      }
-    }, [ref]);
+          if (ref?.current) observer.observe(ref.current);
+          return () => (ref?.current ? observer.unobserve(ref.current) : undefined);
+        }
+      }, [ref]);
+    else
+      useEffect(() => {
+        if (detectMobile(navigator)) setVisibility('visible');
+        else {
+          const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) setVisibility('visible');
+          }, options);
 
-    return isVisible;
+          if (ref?.current) observer.observe(ref.current);
+          return () => (ref?.current ? observer.unobserve(ref.current) : undefined);
+        }
+      }, [ref]);
+
+    return visibility;
   };
 
   return { checkVisibility };
