@@ -1,5 +1,7 @@
+import { Timeline as TimelineComponent } from '~/components/sections/';
+
 const Timeline = () => {
-  return <div>Timeline</div>;
+  return <TimelineComponent />;
 };
 
 export default Timeline;

@@ -4,7 +4,7 @@ import { i18next } from '~/services';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Menu } from '~/components/elements';
+import { BlurryBlob, Menu } from '~/components/elements';
 import { Footer } from '~/components/sections';
 import { supportedLngs } from '~/config/locales/i18n';
 import { Locales } from '~/models/settings';
@@ -23,7 +23,7 @@ const Template = () => {
 
   const menuItems = [
     { link: `/${locale}`, name: t('page_homepage') },
-    { link: `/${locale}/goals`, name: t('page_endeavours') },
+    { link: `/${locale}/endeavours`, name: t('page_endeavours') },
     { link: `/${locale}/timeline`, name: t('page_timeline') },
     { link: `/${locale}/research`, name: t('page_research') },
   ];
@@ -33,8 +33,9 @@ const Template = () => {
       className={`relative min-h-full w-full overflow-hidden bg-dark ${
         !allowScroll && 'max-h-screen overflow-y-hidden'
       }`}>
+      <BlurryBlob />
       <Menu menuItems={menuItems} onClick={() => setAllowScroll(!allowScroll)} />
-      <div className="relative flex h-min items-center justify-center">
+      <div className="relative flex items-center justify-center">
         <Outlet />
       </div>
       <Footer locale={locale} />

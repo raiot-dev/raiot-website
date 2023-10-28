@@ -8,6 +8,7 @@ import { HttpStatusCode } from '~/models/http/statusCodes';
 import { fallbackLng, supportedLngs } from '~/config/locales/i18n';
 import { Contact, Footer, Header, Reputation, WhoAmI } from '~/components/sections';
 import { Endeavours, Timeline } from '~/components/sections/';
+import { Link } from '@remix-run/react';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -37,18 +38,25 @@ export const loader: LoaderFunction = async ({ request }) => {
  */
 const Hive = () => {
   return (
-    <>
-      <BlurryBlob>
-        <Header />
-        <main role="main" className="snap-y snap-mandatory">
-          <WhoAmI />
-          <Endeavours />
-          <Timeline />
-          <Reputation />
-          <Contact />
-        </main>
-      </BlurryBlob>
-    </>
+    <div className="relative h-full w-full">
+      <Header />
+      <main role="main" className="snap-y snap-mandatory">
+        <WhoAmI />
+        <Endeavours />
+        <img src="/assets/wave_transition.svg" />
+        <div>
+          <Timeline limit={2} />
+          <Link
+            to="./timeline"
+            className="ml-10 flex w-80 cursor-pointer flex-row items-center justify-evenly rounded-md bg-primary p-4 font-kumbhSans text-2xl font-semibold text-white shadow-sm shadow-primary lg:ml-20">
+            <img src="/assets/book.svg" className="aspect-square w-8" />
+            <span>Continue Reading</span>
+          </Link>
+        </div>
+        <Reputation />
+        <Contact />
+      </main>
+    </div>
   );
 };
 
