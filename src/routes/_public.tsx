@@ -34,10 +34,10 @@ const Template = () => {
         !allowScroll && 'max-h-screen overflow-y-hidden'
       }`}>
       <Menu menuItems={menuItems} onClick={() => setAllowScroll(!allowScroll)} />
-      <div className="h-full">
+      <div className="relative flex h-min items-center justify-center">
         <Outlet />
       </div>
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 };

@@ -36,7 +36,8 @@ export const Menu = ({ menuItems, onClick = (e) => {} }: MenuProps) => {
                 </div>
                 <Link
                   className="h-auto w-5/6 overflow-hidden hyphens-auto whitespace-pre-wrap font-bebasNeue text-6xl text-white no-underline opacity-50 transition-opacity group-hover/item:opacity-100 md:text-7xl lg:text-8xl"
-                  to={link}>
+                  to={link}
+                  preventScrollReset>
                   <Hashing text={name} />
                 </Link>
               </div>

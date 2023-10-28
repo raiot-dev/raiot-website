@@ -25,6 +25,18 @@
     font-synthesis: none;
   }
 
+  .text-stroke-2xl {
+    -webkit-text-stroke: 0.075rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  .text-stroke-xl {
+    -webkit-text-stroke: 0.05rem;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
   .text-last-center {
     text-align-last: center;
   }
