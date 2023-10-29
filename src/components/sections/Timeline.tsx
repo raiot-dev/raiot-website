@@ -6,7 +6,7 @@ import { SectionHeadline } from '~/components/elements/';
 const mockData = [
   {
     name: '2022/2023',
-    link: '/timeline?year=2022',
+    link: 'timeline?year=2022',
     text: `We're a group of tech enthusiasts who are passionate
             about exploring the endless possibilities of technology and its potential to shape the future.
             Our team of students and developers is dedicated to learning, creating and understanding
@@ -15,7 +15,7 @@ const mockData = [
   },
   {
     name: '2023/2024',
-    link: '/timeline?year=2023',
+    link: 'timeline?year=2023',
     text: `We focus on teaching robotics, IoT and software development to the students of the HTL Dornbirn.
 By combining multiple different types of lessons students can learn to apply programming skills to
 various fields, such as robotics, AI, game development, and web design. They can
@@ -27,20 +27,24 @@ and connect with us if you'd like to collaborate or have any questions.`,
   },
 ];
 
-export const Timeline = () => {
+interface TimelineProps {
+  limit?: number;
+}
+
+export const Timeline = ({ limit }: TimelineProps) => {
   const { t } = useTranslation('common');
 
   return (
     <section id="timeline" className="relative w-full snap-always">
       <SectionHeadline pageTitel={t('page_timeline')} pageContent={t('page_timeline-subheading')} />
       <div className="py-16 pl-10 lg:pl-20">
-        {mockData.map(({ name, link, text }) => (
-          <div key={name} className="group/item pb-12">
+        {mockData.slice(0, limit ?? mockData.length).map(({ name, link, text }) => (
+          <div key={name} className="group/item pb-12" id={name.split('/')[0]}>
             <div className="relative flex flex-row">
               <div className="mr-4 flex w-2 items-center justify-center md:w-3 lg:w-4">
                 <div className="h-full w-1 rounded-full bg-white transition-all duration-500 group-hover/item:bg-primary lg:w-2" />
               </div>
-              <Link className="h-auto w-5/6 text-white no-underline" to={link}>
+              <Link relative="path" className="h-auto w-5/6 text-white no-underline" to={`./${link}`}>
                 <h3 className="overflow-hidden hyphens-auto whitespace-pre-wrap pb-6 font-bebasNeue text-5xl md:text-8xl lg:text-9xl">
                   {name}
                 </h3>
@@ -50,10 +54,6 @@ export const Timeline = () => {
             <div className="my-4 aspect-square w-2 rounded-full bg-white md:w-3 lg:w-4" />
           </div>
         ))}
-        <button className="flex w-80 cursor-pointer flex-row items-center justify-evenly rounded-md bg-primary p-4 font-kumbhSans text-2xl font-semibold text-white shadow-sm shadow-primary">
-          <img src="/assets/book.svg" className="aspect-square w-8" />
-          <span>Continue Reading</span>
-        </button>
       </div>
     </section>
   );

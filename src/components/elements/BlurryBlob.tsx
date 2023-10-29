@@ -1,11 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useUtilities } from '~/services';
 
-interface BlurrBloyProps {
-  children: Array<JSX.Element> | JSX.Element;
-}
-
-export const BlurryBlob = ({ children }: BlurrBloyProps) => {
+export const BlurryBlob = () => {
   const blobReference = useRef<HTMLDivElement>(null);
   const { detectMobile } = useUtilities();
 
@@ -21,11 +17,10 @@ export const BlurryBlob = ({ children }: BlurrBloyProps) => {
   return (
     <>
       <div
-        className="animation-rotating pointer-events-none absolute left-[50%] top-[50%] hidden h-52 w-52 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30 md:block"
+        className="animation-rotating pointer-events-none absolute left-1/2 top-1/2 hidden h-52 w-52 rounded-full bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-30 md:block"
         ref={blobReference}
       />
       <div className="pointer-events-none absolute left-0 top-0 h-full w-full backdrop-blur-3xl" />
-      <div className="relative h-full w-full">{children}</div>
     </>
   );
 };

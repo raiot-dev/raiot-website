@@ -41,5 +41,6 @@
   "reputation_feedback": "Verlassen Sie sich nicht auf unser Wort,\r\nSehen Sie sich an, was die Leute über uns sagen;",
   "contact_placeholder_name": "Dein Name*",
   "contact_placeholder_email": "Deine E-Mail-Adresse*",
-  "contact_placeholder_message": "Deine Nachricht an uns*"
+  "contact_placeholder_message": "Deine Nachricht an uns*",
+  "error_no-data": "Keine Daten verfügbar"
 }

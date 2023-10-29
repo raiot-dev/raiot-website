@@ -1,8 +1,8 @@
 # 🧾 The RAIOT Website
 
-[![GitHub version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/the-automata-hive/automata-hive-website.git)
-![GitHub](https://img.shields.io/github/license/the-automata-hive/automata-hive-website)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/the-automata-hive/automata-hive-website?color=yellowgreen)
+[![GitHub version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/raiot-dev/automata-hive-website.git)
+![GitHub](https://img.shields.io/github/license/raiot-dev/automata-hive-website)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/raiot-dev/raiot-website?color=yellowgreen)
 
 This repository is the main landing page of the automata-hive website and for its room reservation system.
 
@@ -18,14 +18,14 @@ This repository is the main landing page of the automata-hive website and for it
 - [📁 Folder Structure](https://remix.run/docs/en/v1/api/conventions)
 - [🐱‍💻 Internationalization](https://www.i18next.com/overview/getting-started)
 - [🧬 Commit-Convention](https://www.conventionalcommits.org/en/v1.0.0/)
-- [🧾 Dotfiles](https://github.com/the-automata-hive/automata-hive-dotfiles)
+- [🧾 Dotfiles](https://github.com/raiot-dev/automata-hive-dotfiles)
 
 ## 🔽 Installation
 
 Open your terminal and type in
 
 ```ps
-$ git clone https://github.com/the-automata-hive/automata-hive-website.git
+$ git clone https://github.com/raiot-dev/automata-hive-website.git
 ```
 
 Afterwards, execute this command to install all dependencies;
@@ -89,7 +89,7 @@ automata-hive-website
 ## 🐛 Bugs
 
 If you have questions, feature requests or a bug you want to report, please click
-[here](https://github.com/the-automata-hive/automata-hive-website/issues) to file an issue.
+[here](https://github.com/raiot-dev/raiot-website/issues) to file an issue.
 
 ## 🖊️ Author
 
@@ -98,4 +98,4 @@ If you have questions, feature requests or a bug you want to report, please clic
 ## ⚠️ License
 
 Copyright (c) 2023 schmaenjael
-For furher information refer to the [license](https://github.com/the-automata-hive/automata-hive-website/blob/master/LICENSE)
+For furher information refer to the [license](https://github.com/raiot-dev/automata-hive-website/blob/master/LICENSE)

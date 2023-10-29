@@ -1,5 +1,6 @@
 import { Link } from '@remix-run/react';
 import { useTranslation } from 'react-i18next';
+import { Locales } from '~/models/settings';
 
 // TODO:
 const images = [
@@ -12,13 +13,13 @@ const images = [
   { image: '/assets/logos/Weiss.png', link: '/' },
 ];
 
-export const Footer = () => {
+export const Footer = ({ locale }: { locale: Locales }) => {
   const { t } = useTranslation();
 
   return (
     <footer
       id="footer"
-      className="grid h-screen w-full grid-cols-4 grid-rows-2 overflow-hidden bg-secondary bg-opacity-25 p-3 font-kumbhSans md:h-[50vh] md:px-10">
+      className="relative grid h-screen w-full grid-cols-4 grid-rows-2 overflow-hidden bg-secondary bg-opacity-25 p-3 font-kumbhSans md:h-[50vh] md:px-10">
       <div className="col-span-2 row-span-2 hidden h-full grid-cols-2 pt-5 md:grid">
         {images.map(({ image, link }, i) => (
           <Link key={`image-index-${i}`} to={link} target="_blank" className={`w-1/2 object-contain px-4`}>
@@ -58,9 +59,9 @@ export const Footer = () => {
         </a>
       </div>
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
-        Copyright © 2023 Automata Hive. All rights reserved. &nbsp;|&nbsp;<Link to="/policies">Privacy Policy</Link>
-        &nbsp;|&nbsp;<Link to="/legal">Legal</Link>
-        &nbsp;|&nbsp;<Link to="/contact">Contact</Link>
+        Copyright © 2023 Automata Hive. All rights reserved. &nbsp;|&nbsp;
+        <Link to={`/${locale}/policies`}>Privacy Policy</Link>
+        &nbsp;|&nbsp;<Link to={`/${locale}/contact`}>Contact</Link>
       </p>
     </footer>
   );

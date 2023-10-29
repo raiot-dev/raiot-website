@@ -1,8 +1,6 @@
 import { V2_MetaFunction, LoaderFunction, redirect } from '@remix-run/node';
-import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
 
-import { BlurryBlob, Menu } from '~/components/elements';
+import { BlurryBlob } from '~/components/elements';
 
 import { Locales } from '~/models/settings';
 import { HttpStatusCode } from '~/models/http/statusCodes';
@@ -10,6 +8,7 @@ import { HttpStatusCode } from '~/models/http/statusCodes';
 import { fallbackLng, supportedLngs } from '~/config/locales/i18n';
 import { Contact, Footer, Header, Reputation, WhoAmI } from '~/components/sections';
 import { Endeavours, Timeline } from '~/components/sections/';
+import { Link } from '@remix-run/react';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -38,30 +37,25 @@ export const loader: LoaderFunction = async ({ request }) => {
  ? instead of http://localhost:3000/$lang/hive
  */
 const Hive = () => {
-  const { t } = useTranslation('common');
-  const [allowScroll, setAllowScroll] = useState(true);
-
-  const menuItems = [
-    { link: '/#', name: t('page_homepage') },
-    { link: '/goals', name: t('page_endeavours') },
-    { link: '/timeline', name: t('page_timeline') },
-    { link: '/research', name: t('page_research') },
-  ];
-
   return (
-    <div className={`relative w-full overflow-hidden bg-dark ${!allowScroll && 'max-h-screen overflow-y-hidden'}`}>
-      <BlurryBlob>
-        <Menu menuItems={menuItems} onClick={() => setAllowScroll(!allowScroll)} />
-        <Header />
-        <main role="main" className="snap-y snap-mandatory">
-          <WhoAmI />
-          <Endeavours />
-          <Timeline />
-          <Reputation />
-          <Contact />
-        </main>
-        <Footer />
-      </BlurryBlob>
+    <div className="relative h-full w-full">
+      <Header />
+      <main role="main" className="snap-y snap-mandatory">
+        <WhoAmI />
+        <Endeavours />
+        <img src="/assets/wave_transition.svg" />
+        <div>
+          <Timeline limit={2} />
+          <Link
+            to="./timeline"
+            className="ml-10 flex w-80 cursor-pointer flex-row items-center justify-evenly rounded-md bg-primary p-4 font-kumbhSans text-2xl font-semibold text-white shadow-sm shadow-primary lg:ml-20">
+            <img src="/assets/book.svg" className="aspect-square w-8" />
+            <span>Continue Reading</span>
+          </Link>
+        </div>
+        <Reputation />
+        <Contact />
+      </main>
     </div>
   );
 };

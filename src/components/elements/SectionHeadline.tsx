@@ -23,7 +23,7 @@ export const SectionHeadline = ({
   const headingRef = useRef(null);
   const { checkVisibility } = useIsVisible();
 
-  const isVisible = checkVisibility(headingRef);
+  const isVisible = checkVisibility(headingRef, { persistent: true });
 
   return (
     <hgroup

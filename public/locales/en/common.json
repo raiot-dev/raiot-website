@@ -41,5 +41,6 @@
   "reputation_feedback": "Don't take our word for it,\r\ncheck out what people say about us;",
   "contact_placeholder_name": "Your Name*",
   "contact_placeholder_email": "Your E-Mail*",
-  "contact_placeholder_message": "Your Message*"
+  "contact_placeholder_message": "Your Message*",
+  "error_no-data": "No data available."
 }

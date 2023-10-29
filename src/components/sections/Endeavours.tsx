@@ -61,7 +61,6 @@ export const Endeavours = () => {
           </p>
         </div>
       </section>
-      <img src="/assets/wave_transition.svg" />
     </>
   );
 };

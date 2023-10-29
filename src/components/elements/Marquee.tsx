@@ -2,6 +2,7 @@ import { Link } from '@remix-run/react';
 
 interface MarqueeProps {
   backgroundColor?: string;
+  errorMessage?: string;
 }
 
 const images = [
@@ -14,8 +15,15 @@ const images = [
   { image: '/assets/logos/Weiss.png', link: '/' },
 ];
 
-export const Marquee = ({ backgroundColor = 'bg-transparent' }: MarqueeProps) => {
+export const Marquee = ({ backgroundColor = 'bg-transparent', errorMessage = 'No data!' }: MarqueeProps) => {
   // these images require a width of 300px and a height of 150px
+
+  if (images.length === 0)
+    return (
+      <div className="flex min-h-[12rem] w-full items-center justify-center font-kumbhSans text-xl text-secondary">
+        {errorMessage}
+      </div>
+    );
 
   return (
     <div
