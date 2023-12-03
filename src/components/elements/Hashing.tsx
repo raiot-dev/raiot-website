@@ -25,6 +25,9 @@ export const Hashing = ({ text }: HashingProps) => {
 
       iterations += 1 / (2 / (text.length / 10));
     }, 25);
+
+    // ! if the interval is cleared too fast, the last letter might be lost -> this is a fix
+    if (text !== hashName) setHashName(text);
   };
 
   return (

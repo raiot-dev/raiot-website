@@ -42,5 +42,8 @@
   "contact_placeholder_name": "Your Name*",
   "contact_placeholder_email": "Your E-Mail*",
   "contact_placeholder_message": "Your Message*",
+  "research_filter-settings": "Settings",
+  "research_filter-by": "Filter by",
+  "research_sort-by": "Sort by",
   "error_no-data": "No data available."
 }

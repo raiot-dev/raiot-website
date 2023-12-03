@@ -28,10 +28,10 @@ export const Reputation = () => {
   const ref = useRef<StackedCarousel>();
 
   return (
-    <section id="reputation" className="relative h-screen w-full snap-always bg-transparent">
+    <section id="reputation" className="relative h-[120vh] w-full snap-always bg-transparent">
       <div className="pointer-events-none absolute right-1/3 h-screen w-1/4 rotate-45 rounded-[100%] bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-20 blur-3xl " />
       <SectionHeadline pageTitel={t('page_reputation')} pageContent={t('page_reputation-subheading')} />
-      <div className="flex h-[65%] w-full flex-col items-center justify-center">
+      <div className="flex h-[65%] w-full flex-col items-center justify-center pt-16">
         <h3 className="whitespace-pre-line pt-16 text-center font-bebasNeue text-xl text-white md:text-3xl lg:p-0 lg:text-5xl">
           {t(`reputation_feedback`)}
         </h3>
