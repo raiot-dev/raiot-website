@@ -3,18 +3,27 @@ import { Form } from '@remix-run/react';
 import { useTranslation } from 'react-i18next';
 import { SectionHeadline } from '~/components/elements/';
 
+import { storyblokEditable } from '@storyblok/react';
+
 export const contactAction: ActionFunction = async () => {
   return {};
 };
 
-export const Contact = () => {
+export const Contact = ({ blok }: any) => {
   const { t } = useTranslation('common');
 
   return (
-    <section id="contact" className="relative h-screen w-full snap-always bg-transparent">
-      <SectionHeadline pageTitel={t('page_contact')} pageContent={t('page_contact-subheading')} />
+    <section
+      {...storyblokEditable(blok)}
+      key={blok._uid}
+      id="contact"
+      className="relative h-screen w-full snap-always bg-transparent">
+      <SectionHeadline pageTitel={blok?.title} pageContent={blok?.subheading} />
       <div className="flex h-4/5 flex-row items-center justify-center gap-x-10">
-        <img src="/assets/binary.png" className="absolute aspect-square w-5/6 opacity-25 lg:relative lg:w-1/3" />
+        <img
+          src={blok?.background_image.filename}
+          className="absolute aspect-square w-5/6 opacity-25 lg:relative lg:w-1/3"
+        />
         <Form method="POST" action="/" className="relative flex w-5/6 flex-col gap-10 lg:w-1/3">
           <input
             placeholder={t(`contact_placeholder_name`)}

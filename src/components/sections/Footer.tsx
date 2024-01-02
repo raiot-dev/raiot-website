@@ -60,7 +60,7 @@ export const Footer = ({ locale }: { locale: Locales }) => {
       </div>
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
         Copyright © 2023 RAIOT. All rights reserved. &nbsp;|&nbsp;
-        <Link to={`/${locale}/policies`}>Privacy Policy</Link>
+        <Link to={`/${locale}/privacy`}>Privacy Policy</Link>
         &nbsp;|&nbsp;<Link to={`/${locale}/contact`}>Contact</Link>
       </p>
     </footer>
