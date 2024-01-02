@@ -36,7 +36,7 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
   return new Promise((resolve, reject) => {
     const { pipe, abort } = renderToPipeableStream(
       <I18nextProvider i18n={localizationInstance}>
-        <RemixServer context={context} url={request.url} />
+        <RemixServer context={context as any} url={request.url} />
       </I18nextProvider>,
       {
         [isbot(headers.get('User-Agent')) ? 'onAllReady' : 'onShellReady']: () => {

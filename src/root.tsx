@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { storyblokInit, apiPlugin } from '@storyblok/react';
 import { json, V2_MetaFunction, LoaderFunction, LinksFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 
@@ -8,11 +9,20 @@ import { SettingsContext } from '~/context/settings/';
 import { Locales, Themes } from '~/models/settings';
 import { i18next, getUUID } from '~/services';
 
+import { templates } from './components/templates';
+import { sections } from './components/sections';
+import { elements } from './components/elements';
+
 import stylesheet from '~/styles/tailwind.css';
 
 export const meta: V2_MetaFunction = () => [{ charSet: 'utf-8' }];
-
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
+
+storyblokInit({
+  accessToken: 'H25dLdJQLfFyrMlQqziNDwtt',
+  use: [apiPlugin],
+  components: { ...sections, ...templates, ...elements },
+});
 
 export const loader: LoaderFunction = async ({ request }) => {
   const lang = (await i18next.getLocale(request)) as Locales;
@@ -21,10 +31,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   const nonce = `nonce-${getUUID()}`;
 
   return json({ locale, nonce });
-};
-
-export const handle = {
-  i18n: 'common',
 };
 
 const Root = () => {
@@ -51,12 +57,7 @@ const Root = () => {
         />
       </head>
       <body>
-        <SettingsContext.Provider
-          value={{
-            locale,
-            theme,
-            setTheme,
-          }}>
+        <SettingsContext.Provider value={{ locale, theme, setTheme }}>
           <Outlet />
         </SettingsContext.Provider>
         <ScrollRestoration nonce={nonce} />
