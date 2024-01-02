@@ -10,7 +10,7 @@ export const Timeline = ({ blok }: any) => {
     <section {...storyblokEditable(blok)} key={blok._uid} id="timeline" className="relative w-full snap-always">
       <SectionHeadline pageTitel={t('page_timeline')} pageContent={t('page_timeline-subheading')} />
       <div className="py-16 pl-10 lg:pl-20">
-        {blok.timelineSlots.slice(0, blok.limit ?? blok.length).map((timelineSlotBlok: any) => (
+        {blok.timeline_slots.slice(0, blok.limit ?? blok.length).map((timelineSlotBlok: any) => (
           <StoryblokComponent blok={timelineSlotBlok} key={timelineSlotBlok._uid} />
         ))}
       </div>

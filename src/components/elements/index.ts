@@ -8,6 +8,7 @@ export * from './Hashing';
 export * from './Marquee';
 export * from './Menu';
 export * from './ReputationSlide';
+export * from './PublishedArticle';
 
 export const elements = {
   TimelineSlot: TimelineSlot,

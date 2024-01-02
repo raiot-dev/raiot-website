@@ -37,7 +37,7 @@ export const WhoAmI = ({ blok }: any) => {
           </div>
           <img src={blok.image.filename} className="hidden aspect-square w-1/3 lg:block" />
         </div>
-        <p className="pb-4 text-center font-kumbhSans text-lg text-white">{blok.thankYou}</p>
+        <p className="pb-4 text-center font-kumbhSans text-lg text-white">{blok.thank_you}</p>
       </section>
       <Marquee backgroundColor="bg-dark" errorMessage={t('error_no-data')} />
     </>

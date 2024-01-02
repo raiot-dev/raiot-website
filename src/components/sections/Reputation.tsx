@@ -1,8 +1,7 @@
 import { StackedCarousel, ResponsiveContainer } from 'react-stacked-center-carousel';
-import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 
-import { ReputationSlide, ReputationSlideProps, SectionHeadline } from '~/components/elements/';
+import { ReputationSlide, SectionHeadline } from '~/components/elements/';
 import { storyblokEditable } from '@storyblok/react';
 
 export const Reputation = ({ blok }: any) => {

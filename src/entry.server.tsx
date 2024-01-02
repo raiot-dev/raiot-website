@@ -28,9 +28,7 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
       ...i18nConfig,
       ns,
       lng: locale,
-      backend: {
-        loadPath: resolve(`./public/locales/{{lng}}/{{ns}}.json`),
-      },
+      backend: { loadPath: resolve(`./public/locales/{{lng}}/{{ns}}.json`) },
     });
 
   return new Promise((resolve, reject) => {

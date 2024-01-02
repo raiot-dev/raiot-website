@@ -17,13 +17,13 @@ export const Header = ({ blok }: any) => {
           {blok.title}
         </h1>
         <Typewriter
-          content={blok.catchphraseData.map(({ content }: any) => content)}
+          content={blok.catchphrase_data.map(({ content }: any) => content)}
           typeSpeed={75}
           repeat
           className="py-5 text-center font-kumbhSans text-2xl text-slate-700 lg:text-3xl"
         />
         <div className="flex cursor-pointer flex-row items-center justify-center">
-          {blok.linkData.map(({ link, name, image }: any) => (
+          {blok.link_data.map(({ link, name, image }: any) => (
             <Link to={link.url} target="_blank" about={name} key={name}>
               <img className="aspect-square h-full px-3 transition-all hover:brightness-75" src={image.filename} />
             </Link>

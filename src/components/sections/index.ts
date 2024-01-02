@@ -8,6 +8,7 @@ import { WhoAmI } from './WhoAmI';
 import { Contact } from './Contact';
 import { Footer } from './Footer';
 import { PrivacyPolicy } from './PrivacyPolicy';
+import { Research } from './Research';
 
 export const sections: SbReactComponentsMap = {
   Contact: Contact,
@@ -18,4 +19,5 @@ export const sections: SbReactComponentsMap = {
   WhoAmI: WhoAmI,
   PrivacyPolicy: PrivacyPolicy,
   Footer: Footer,
+  Research: Research,
 };
