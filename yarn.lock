@@ -1968,6 +1968,20 @@
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-4.6.0.tgz"
   integrity sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==
 
+"@storyblok/js@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-2.3.0.tgz#be2a9eb0cfb1de2b26c6b7733529c95f2a7cad10"
+  integrity sha512-xI69Ec0hVtg6Z6asI38UU/Ztag0CYEfFlFY6ti/TcJiaJeOFAvSUnRXwZ4yb86V8jjsNPaWt37oFk7Jr+isy4g==
+  dependencies:
+    storyblok-js-client "^5.14.2"
+
+"@storyblok/react@^2.4.7":
+  version "2.4.7"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-2.4.7.tgz#979e70802fd5de07802cc353f9d39ac1719df5ce"
+  integrity sha512-maEEoupuLvKmxaZz1CFAn7jnNXL9y14zyr+9UqbP/btiahp9ZSX5JMuDRBRscfQ6UMjmbd+ijdnl1BgFkAZfwA==
+  dependencies:
+    "@storyblok/js" "^2.3.0"
+
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
   resolved "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-4.0.6.tgz"
@@ -5172,6 +5186,11 @@ markdown-extensions@^1.0.0:
   resolved "https://registry.npmjs.org/markdown-extensions/-/markdown-extensions-1.1.1.tgz"
   integrity sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q==
 
+markdown-to-jsx@^7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.3.2.tgz#f286b4d112dad3028acc1e77dfe1f653b347e131"
+  integrity sha512-B+28F5ucp83aQm+OxNrPkS8z0tMKaeHiy0lHJs3LqCyDQFtWuenaIrkaVTgAm1pf1AU85LXltva86hlaT17i8Q==
+
 mdast-util-definitions@^5.0.0:
   version "5.1.2"
   resolved "https://registry.npmjs.org/mdast-util-definitions/-/mdast-util-definitions-5.1.2.tgz"
@@ -7024,6 +7043,11 @@ stop-iteration-iterator@^1.0.0:
   integrity sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==
   dependencies:
     internal-slot "^1.0.4"
+
+storyblok-js-client@^5.14.2:
+  version "5.14.4"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-5.14.4.tgz#bfc69995bc4ca40a9bd1e5745a651b4eca591b08"
+  integrity sha512-9yY33tvfO3Cbe25h/l6K0T3IxJeOOyGl/pCwsd55woT0ZEBhIiEZoMumpRsyLjD5AedW9KXLbLjMXhHazkepCA==
 
 stream-shift@^1.0.0:
   version "1.0.1"
