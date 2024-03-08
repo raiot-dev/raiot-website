@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { storyblokEditable } from '@storyblok/react';
 import { Link } from '@remix-run/react';
 
@@ -7,8 +6,6 @@ import { Typewriter, Nightsky } from '~/components/elements';
 import { NightskyConfig } from '~/config/visuals/visuals';
 
 export const Header = ({ blok }: any) => {
-  const { t } = useTranslation('common');
-
   return (
     <header {...storyblokEditable(blok)} key={blok?._uid} id="header" className="relative h-screen w-full">
       {<Nightsky {...NightskyConfig} />}

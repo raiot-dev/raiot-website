@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData } from '@remix-run/react';
-import { LoaderFunction, json, redirect } from '@remix-run/node';
+import { LinksFunction, LoaderFunction, V2_MetaFunction, json, redirect } from '@remix-run/node';
 import { getStoryblokApi, useStoryblokState, StoryblokComponent } from '@storyblok/react';
 
 import { i18next } from '~/services';
-import { supportedLngs } from '~/config/locales/i18n';
 import { Locales } from '~/models/settings';
+import { supportedLngs } from '~/config/locales/i18n';
 import { HttpStatusCode } from '~/models/http/statusCodes';
 
-import { BlurryBlob, Menu } from '~/components/elements';
 import { Footer } from '~/components/sections/Footer';
+import { BlurryBlob, Menu } from '~/components/elements';
 
 export const loader: LoaderFunction = async ({ request, params }) => {
   const requestLocale = (params['*']?.split('/')[0] as Locales) || null;
@@ -24,10 +24,20 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   return json({ data: data?.story, locale });
 };
 
+export const links: LinksFunction = () => {
+  return [{ rel: 'icon', href: '/assets/favicon.ico' }];
+};
+
+export const meta: V2_MetaFunction = ({ data }) => {
+  const { title, description, keywords } = data.data.content;
+  return [{ title: title }, { name: 'description', content: description }, { name: 'keywords', content: keywords }];
+};
+
 const Template = () => {
   const { t } = useTranslation('common');
   const { data, locale } = useLoaderData();
   const story = useStoryblokState(data);
+
   const [allowScroll, setAllowScroll] = useState(true);
 
   const menuItems = [
@@ -47,7 +57,6 @@ const Template = () => {
       <div className="relative flex items-center justify-center">
         <StoryblokComponent blok={story?.content} key={story?.name} />
       </div>
-      <Footer locale={locale} />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import Markdown from 'markdown-to-jsx';
 import { Link } from '@remix-run/react';
 import { storyblokEditable } from '@storyblok/react';
 
-const TimelineSlot = ({ blok }: any) => {
+export const TimelineSlot = ({ blok }: any) => {
   return (
     <div {...storyblokEditable(blok)} key={blok._uid} className="group/item pb-12" id={blok.name.split('/')[0]}>
       <div className="relative flex flex-row">
@@ -22,5 +22,3 @@ const TimelineSlot = ({ blok }: any) => {
     </div>
   );
 };
-
-export default TimelineSlot;

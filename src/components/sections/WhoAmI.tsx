@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/react';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Marquee, SectionHeadline } from '~/components/elements/';
+import { SectionHeadline } from '~/components/elements/';
 import { VisibilityState, useIsVisible } from '~/hooks/useIsVisible';
 
 const visibilityState: VisibilityState = {
@@ -22,7 +22,7 @@ export const WhoAmI = ({ blok }: any) => {
         {...storyblokEditable(blok)}
         key={blok._uid}
         id="whoami"
-        className="relative flex h-screen w-full snap-always flex-col items-center justify-between border-b-[1px] border-secondary bg-transparent">
+        className="relative flex h-screen w-full  flex-col items-center justify-between border-b-[1px] border-secondary bg-transparent">
         <SectionHeadline pageTitel={blok.title} pageContent={blok.subheading} className="pt-16" />
         <div
           ref={ref}
@@ -39,7 +39,6 @@ export const WhoAmI = ({ blok }: any) => {
         </div>
         <p className="pb-4 text-center font-kumbhSans text-lg text-white">{blok.thank_you}</p>
       </section>
-      <Marquee backgroundColor="bg-dark" errorMessage={t('error_no-data')} />
     </>
   );
 };

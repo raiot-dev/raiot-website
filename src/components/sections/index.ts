@@ -11,13 +11,13 @@ import { PrivacyPolicy } from './PrivacyPolicy';
 import { Research } from './Research';
 
 export const sections: SbReactComponentsMap = {
-  Contact: Contact,
-  Endeavours: Endeavours,
-  Header: Header,
-  Reputation: Reputation,
-  Timeline: Timeline,
-  WhoAmI: WhoAmI,
-  PrivacyPolicy: PrivacyPolicy,
-  Footer: Footer,
-  Research: Research,
+  Contact,
+  Endeavours,
+  Header,
+  Reputation,
+  Timeline,
+  WhoAmI,
+  PrivacyPolicy,
+  Footer,
+  Research,
 };

@@ -12,7 +12,7 @@ export const Reputation = ({ blok }: any) => {
       {...storyblokEditable(blok)}
       key={blok._uid}
       id="reputation"
-      className="relative h-[120vh] w-full snap-always bg-transparent">
+      className="relative h-[120vh] w-full  bg-transparent">
       <div className="pointer-events-none absolute right-1/3 h-screen w-1/4 rotate-45 rounded-[100%] bg-gradient-to-r from-[#DF3D92] to-[#1F34E7] opacity-20 blur-3xl " />
       <SectionHeadline pageTitel={blok.title} pageContent={blok.subheading} />
       <div className="flex h-[65%] w-full flex-col items-center justify-center pt-16">

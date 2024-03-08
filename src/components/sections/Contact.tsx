@@ -17,7 +17,7 @@ export const Contact = ({ blok }: any) => {
       {...storyblokEditable(blok)}
       key={blok._uid}
       id="contact"
-      className="relative h-screen w-full snap-always bg-transparent">
+      className="relative h-screen w-full  bg-transparent">
       <SectionHeadline pageTitel={blok?.title} pageContent={blok?.subheading} />
       <div className="flex h-4/5 flex-row items-center justify-center gap-x-10">
         <img

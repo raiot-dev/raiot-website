@@ -1,29 +1,20 @@
 import { Link } from '@remix-run/react';
+import { storyblokEditable } from '@storyblok/react';
 import { useTranslation } from 'react-i18next';
-import { Locales } from '~/models/settings';
 
-// TODO:
-const images = [
-  { image: '/assets/logos/ALPLA.png', link: '/' },
-  { image: '/assets/logos/bachmann.png', link: '/' },
-  { image: '/assets/logos/Blum.png', link: '/' },
-  { image: '/assets/logos/Getzner_Textil.png', link: '/' },
-  { image: '/assets/logos/HTL.png', link: '/' },
-  { image: '/assets/logos/Zumtobel.png', link: '/' },
-  { image: '/assets/logos/Weiss.png', link: '/' },
-];
-
-export const Footer = ({ locale }: { locale: Locales }) => {
+export const Footer = ({ blok }: any) => {
   const { t } = useTranslation();
 
   return (
     <footer
       id="footer"
+      {...storyblokEditable(blok)}
+      key={blok?._uid}
       className="relative grid h-screen w-full grid-cols-4 grid-rows-2 overflow-hidden bg-secondary bg-opacity-25 p-3 font-kumbhSans md:h-[66vh] md:px-10">
       <div className="col-span-2 row-span-2 hidden h-full grid-cols-2 pt-5 md:grid">
-        {images.map(({ image, link }, i) => (
+        {blok.sponsors.map(({ name, logo, link }: any, i: number) => (
           <Link key={`image-index-${i}`} to={link} target="_blank" className={`w-1/2 object-contain px-4`}>
-            <img src={image} className="scale-[2.5] lg:scale-100" />
+            <img src={logo.filename} title={name} className="scale-[2.5] lg:scale-100" />
           </Link>
         ))}
       </div>
@@ -58,10 +49,11 @@ export const Footer = ({ locale }: { locale: Locales }) => {
           {t('phone')}
         </a>
       </div>
+      {/* TODO: fix redirect */}
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
         Copyright © 2023 RAIOT. All rights reserved. &nbsp;|&nbsp;
-        <Link to={`/${locale}/privacy`}>Privacy Policy</Link>
-        &nbsp;|&nbsp;<Link to={`/${locale}/contact`}>Contact</Link>
+        <Link to={`privacy`}>Privacy Policy</Link>
+        &nbsp;|&nbsp;<Link to={`contact`}>Contact</Link>
       </p>
     </footer>
   );
