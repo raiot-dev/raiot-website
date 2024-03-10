@@ -2,6 +2,7 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import { renderToPipeableStream } from 'react-dom/server';
 import { EntryContext } from '@remix-run/server-runtime';
 import { RemixServer } from '@remix-run/react';
+
 import Backend from 'i18next-fs-backend';
 import { createInstance } from 'i18next';
 import { PassThrough } from 'stream';
@@ -24,12 +25,7 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
   await localizationInstance
     .use(initReactI18next)
     .use(Backend)
-    .init({
-      ...i18nConfig,
-      ns,
-      lng: locale,
-      backend: { loadPath: resolve(`./public/locales/{{lng}}/{{ns}}.json`) },
-    });
+    .init({ ...i18nConfig, ns, lng: locale, backend: { loadPath: resolve(`./public/locales/{{lng}}/{{ns}}.json`) } });
 
   return new Promise((resolve, reject) => {
     const { pipe, abort } = renderToPipeableStream(
@@ -42,20 +38,13 @@ const handleRequest = async (request: Request, status: number, headers: Headers,
           headers.set('Content-Type', 'text/html');
           headers.set('Content-Language', locale);
 
-          resolve(
-            new Response(body, {
-              headers,
-              status,
-            })
-          );
-
+          resolve(new Response(body, { headers, status }));
           pipe(body);
         },
         onShellError: (error: unknown) => reject(error),
         onError: (error: unknown) => process.stderr.write(String(error)),
       }
     );
-
     setTimeout(abort, ABORT_DELAY);
   });
 };

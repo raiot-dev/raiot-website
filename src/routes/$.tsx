@@ -9,7 +9,6 @@ import { Locales } from '~/models/settings';
 import { supportedLngs } from '~/config/locales/i18n';
 import { HttpStatusCode } from '~/models/http/statusCodes';
 
-import { Footer } from '~/components/sections/Footer';
 import { BlurryBlob, Menu } from '~/components/elements';
 
 export const loader: LoaderFunction = async ({ request, params }) => {

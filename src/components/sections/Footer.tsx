@@ -1,9 +1,17 @@
 import { Link } from '@remix-run/react';
 import { storyblokEditable } from '@storyblok/react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const Footer = ({ blok }: any) => {
   const { t } = useTranslation();
+  const ref = useRef<string>();
+
+  useEffect(() => {
+    const lang = window.location.pathname;
+
+    console.log(lang);
+  }, []);
 
   return (
     <footer
@@ -51,7 +59,7 @@ export const Footer = ({ blok }: any) => {
       </div>
       {/* TODO: fix redirect */}
       <p className="col-span-5 mx-auto flex w-11/12 items-center justify-center border-t-[1px] border-white py-2 text-center text-sm text-white">
-        Copyright © 2023 RAIOT. All rights reserved. &nbsp;|&nbsp;
+        Copyright © 2024 RAIOT. All rights reserved. &nbsp;|&nbsp;
         <Link to={`privacy`}>Privacy Policy</Link>
         &nbsp;|&nbsp;<Link to={`contact`}>Contact</Link>
       </p>
