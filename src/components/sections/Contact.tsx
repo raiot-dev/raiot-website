@@ -21,7 +21,9 @@ export const Contact = ({ blok }: any) => {
       <SectionHeadline pageTitel={blok?.title} pageContent={blok?.subheading} />
       <div className="flex h-4/5 flex-row items-center justify-center gap-x-10">
         <img
-          src={blok?.background_image.filename}
+          loading="lazy"
+          src={`${blok?.background_image.filename}/m/428x428/`}
+          alt={blok?.background_image.alt}
           className="absolute aspect-square w-5/6 opacity-25 lg:relative lg:w-1/3"
         />
         <Form method="POST" action="/" className="relative flex w-5/6 flex-col gap-10 lg:w-1/3">

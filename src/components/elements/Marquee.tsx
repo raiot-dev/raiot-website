@@ -26,8 +26,9 @@ export const Marquee = ({ blok }: any) => {
             key={`image-index-${i}`}
             to={link.url}
             target="_blank"
+            title={name}
             className={`h-1/2 w-auto max-w-[300px] object-contain px-4 transition-opacity hover:opacity-100 lg:opacity-40`}>
-            <img title={name} src={logo.filename} />
+            <img loading="lazy" alt={logo.alt} title={name} src={`${logo.filename}/m/fit-in/`} />
           </Link>
         );
       })}

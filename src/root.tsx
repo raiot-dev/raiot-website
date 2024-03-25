@@ -57,7 +57,6 @@ const Root = () => {
       </head>
       <body>
         <Outlet />
-        <ScrollRestoration nonce={nonce} />
         <LiveReload nonce={nonce} />
         <Scripts nonce={nonce} />
       </body>

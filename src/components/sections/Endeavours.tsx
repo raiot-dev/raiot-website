@@ -47,7 +47,7 @@ export const Endeavours = ({ blok }: any) => {
           </p>
         </div>
       </section>
-      {blok?.transition && <img src={transition.filename} />}
+      {blok?.transition && <img loading="lazy" alt="Transition element to next section" src={transition.filename} />}
     </>
   );
 };

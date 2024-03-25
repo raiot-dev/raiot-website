@@ -21,8 +21,13 @@ export const Header = ({ blok }: any) => {
         />
         <div className="flex cursor-pointer flex-row items-center justify-center">
           {blok.link_data.map(({ link, name, image }: any) => (
-            <Link to={link.url} target="_blank" about={name} key={name}>
-              <img className="aspect-square h-full px-3 transition-all hover:brightness-75" src={image.filename} />
+            <Link title={name} to={link.url} target="_blank" about={name} key={name}>
+              <img
+                loading="lazy"
+                className="aspect-square h-full px-3 transition-all hover:brightness-75"
+                alt={name}
+                src={`${image.filename}/m/`}
+              />
             </Link>
           ))}
         </div>

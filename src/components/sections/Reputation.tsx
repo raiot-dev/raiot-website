@@ -20,8 +20,11 @@ export const Reputation = ({ blok }: any) => {
           {blok.catchphrase}
         </h3>
         <div className="flex w-full flex-row items-center justify-evenly pt-5">
-          <button className="hidden rotate-180 text-2xl text-white md:block" onClick={() => ref?.current?.goBack()}>
-            <img src="/assets/arrow_right.svg" />
+          <button
+            type="button"
+            className="hidden rotate-180 text-2xl text-white md:block"
+            onClick={() => ref?.current?.goBack()}>
+            <img loading="lazy" alt="Navigation button to the left" src="/assets/arrow_right.svg" />
           </button>
           <div className="w-full pt-8 lg:w-9/12 lg:p-0">
             <ResponsiveContainer
@@ -43,8 +46,8 @@ export const Reputation = ({ blok }: any) => {
               )}
             />
           </div>
-          <button className="hidden text-2xl text-white md:block" onClick={() => ref?.current?.goNext()}>
-            <img src="/assets/arrow_right.svg" />
+          <button type="button" className="hidden text-2xl text-white md:block" onClick={() => ref?.current?.goNext()}>
+            <img loading="lazy" alt="Navigation arrow to the right" src="/assets/arrow_right.svg" />
           </button>
         </div>
       </div>

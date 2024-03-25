@@ -8,7 +8,7 @@ export const Landingpage = ({ blok }: any) => {
       {header?.map((nestedBlok: any) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
-      <main role="main" className="snap-y snap-mandatory">
+      <main role="main">
         {body?.map((nestedBlok: any) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}

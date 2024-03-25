@@ -35,7 +35,12 @@ export const WhoAmI = ({ blok }: any) => {
               {blok.text}
             </p>
           </div>
-          <img src={blok.image.filename} className="hidden aspect-square w-1/3 lg:block" />
+          <img
+            loading="lazy"
+            alt={blok.image?.alt}
+            src={`${blok.image.filename}/m/528x528`}
+            className="hidden aspect-square w-1/3 lg:block"
+          />
         </div>
         <p className="pb-4 text-center font-kumbhSans text-lg text-white">{blok.thank_you}</p>
       </section>

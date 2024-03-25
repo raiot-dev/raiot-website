@@ -16,14 +16,14 @@ export const Endeavour = ({ blok }: any) => {
     <div
       {...storyblokEditable(blok)}
       key={_uid}
-      style={{ backgroundImage: `url(${image?.filename})` }}
+      style={{ backgroundImage: `url(${image?.filename}/m/528x0)` }}
       className={`parallelogram absolute h-3/5 w-1/3 cursor-pointer bg-cover transition-all duration-1000 ${
         endeavourStyles[index]
       } ${getStateStyles(index, active)}`}>
-      <h4 className="absolute bottom-1 right-1/4 z-10 bg-black p-1 font-bebasNeue text-lg text-white md:text-2xl">
+      <h3 className="absolute bottom-1 right-1/4 z-10 bg-black p-1 font-bebasNeue text-lg text-white md:text-2xl">
         <span className="text-primary">#</span>
         {name}
-      </h4>
+      </h3>
     </div>
   );
 };

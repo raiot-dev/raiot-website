@@ -10,7 +10,12 @@ export const ResearchArticle = ({ blok }: any) => {
         <span className="text-xl text-secondary">// {new Date(Date.parse(date)).toLocaleDateString('en-GB')}</span>
       </h3>
       <div className="relative h-full rounded-xl border-2 border-white">
-        <img className="h-1/2 w-full rounded-t-xl border-b-2 object-cover" src={image.filename} alt={title} />
+        <img
+          loading="lazy"
+          className="h-1/2 w-full rounded-t-xl border-b-2 object-cover"
+          src={`${image.filename}/m/400x0/`}
+          alt={title}
+        />
         <div className="flex h-1/2 flex-col justify-between px-4 py-6">
           <p className="line-clamp-3 overflow-hidden text-ellipsis whitespace-break-spaces text-justify font-kumbhSans text-white">
             {description}
@@ -18,6 +23,7 @@ export const ResearchArticle = ({ blok }: any) => {
           <a
             href={file_link.url}
             target="_blank"
+            title={title}
             className="w-fit rounded-xl border-2 p-2 text-white"
             download={`${title}.pdf`}>
             {download}

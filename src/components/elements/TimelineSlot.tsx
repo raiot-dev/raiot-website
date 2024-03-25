@@ -9,7 +9,10 @@ export const TimelineSlot = ({ blok }: any) => {
         <div className="mr-4 flex w-2 items-center justify-center md:w-3 lg:w-4">
           <div className="h-full w-1 rounded-full bg-white transition-all duration-500 group-hover/item:bg-primary lg:w-2" />
         </div>
-        <Link relative="path" className="h-auto w-5/6 text-white no-underline" to={`./${blok.link}`}>
+        <Link
+          title={blok.name}
+          className="h-auto w-5/6 text-white no-underline"
+          to={blok.link.url || blok.link.cached_url}>
           <h3 className="overflow-hidden hyphens-auto whitespace-pre-wrap pb-6 font-bebasNeue text-5xl md:text-8xl lg:text-9xl">
             {blok.name}
           </h3>
