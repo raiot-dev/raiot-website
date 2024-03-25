@@ -70,7 +70,7 @@ export const ErrorBoundary = () => {
 
   const menuItems = [
     { link: `/en`, name: t('page_homepage') },
-    { link: `/en/endeavors`, name: t('page_endeavors') },
+    { link: `/en/endeavours`, name: t('page_endeavours') },
     { link: `/en/timeline`, name: t('page_timeline') },
     { link: `/en/research`, name: t('page_research') },
   ];

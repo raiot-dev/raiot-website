@@ -1,5 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { SectionHeadline } from '~/components/elements';
 
@@ -7,6 +8,8 @@ export const Research = ({ blok }: any) => {
   const [tagList, setTags] = useState<string[]>([]);
   const [filter, setFilter] = useState('all');
   const [sort, setSorter] = useState('none');
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     const _tagList = new Set<string>();
@@ -20,9 +23,10 @@ export const Research = ({ blok }: any) => {
       {...storyblokEditable(blok)}
       key={blok._uid}
       className="relative flex h-screen max-h-screen w-full flex-col md:flex-row">
-      <div className="flex h-1/4 w-full flex-col items-center border-r-[1px] border-secondary px-4 pt-20 font-kumbhSans md:h-full md:w-1/6">
-        <div className="flex w-full flex-row justify-between text-white">
-          <label className="uppercase">Filter</label>
+      <div className="flex h-1/4 w-full flex-col items-center border-r-[1px] border-secondary px-4 pt-20 font-kumbhSans text-white md:h-full md:w-1/6">
+        <span className="w-full pb-2 font-bold uppercase">{t('research_filter-settings')}</span>
+        <div className="flex w-full flex-row justify-between py-2">
+          <label className="uppercase">{t('research_filter-by')}</label>
           <select
             onChange={(e) => setFilter(e.target.value.toLocaleLowerCase())}
             className="w-2/3 rounded-lg border-2 border-white bg-transparent p-1">
@@ -33,8 +37,8 @@ export const Research = ({ blok }: any) => {
             ))}
           </select>
         </div>
-        <div className="flex w-full flex-row justify-between text-white">
-          <label className="uppercase">Sort</label>
+        <div className="flex w-full flex-row justify-between py-2">
+          <label className="uppercase">{t('research_sort-by')}</label>
           <select
             onChange={(e) => setSorter(e.target.value.toLocaleLowerCase())}
             className="w-2/3 rounded-lg border-2 border-white bg-transparent p-1">

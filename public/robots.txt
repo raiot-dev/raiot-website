@@ -11,3 +11,4 @@
 #? source: https://asciiart.eu/
 
 User-agent: *
+Disallow:

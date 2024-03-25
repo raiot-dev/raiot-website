@@ -44,7 +44,7 @@ export const Footer = ({ blok }: any) => {
       </div>
       <div className="col-span-2 flex w-full flex-col items-start text-lg text-white md:col-span-1">
         <span className="p-3 text-2xl font-bold">{t('footer_contact')}</span>
-        <span className="p-3">{t('address')}</span>
+        <span className="p-3">{blok.address}</span>
         <a href={`mailto:${blok.email}`} title={'Email contact'} className="p-3">
           {blok.email}
         </a>
